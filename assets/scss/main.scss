@@ -1,0 +1,30 @@
+* {
+  font-family: Roboto, sans-serif;
+  text-transform: none !important;
+  font-style: normal;
+  line-break: normal;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #f8fbff;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(/font/Roboto-Regular.ttf);
+}
+
+.tight-spacing {
+  letter-spacing: -0.01em !important; 
+}
+
+.loose-spacing {
+  letter-spacing: 0.1em; 
+}
+
+.bold-text {
+  font-weight: 600 !important;
+}
