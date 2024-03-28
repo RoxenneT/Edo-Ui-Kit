@@ -28,6 +28,7 @@ const props = defineProps({
 .edo-card-container {
   width: fit-content;
   height: fit-content;
+  background-color: #f8fbff;
   box-shadow: -20px 20px 32px rgba(0,0,0,.06), 0 1px 1px rgba(0,0,0,.1);
   border-radius: 20px;
 }

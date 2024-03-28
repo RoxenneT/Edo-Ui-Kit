@@ -1,0 +1,106 @@
+<script setup>
+const dialog = ref(false);
+const documents = [
+  {
+    title: 'Документы',
+    points: [
+    'Реализация товаров и услуг',
+    'Возврат поставщику',
+    'Акт сверки',
+    ]
+  },
+];
+const languages = [
+  { title: 'Русский', value: 'ru' },
+  { title: 'Қазақша', value: 'kz' }
+];
+</script>
+
+<template>
+<div class="home-container">
+  <v-row align="center">
+    <v-col justify="center">
+      <img
+        style="width: 600px; height: auto;"
+        src="/programming.svg"
+      /> 
+    </v-col>
+    <v-col justify="center">
+      <div class="d-flex flex-column justify-start ga-8 align-center">
+        <div>
+          <h2>UI-Kit, создан на основе Nuxt 3 и Vuetify &#10137;</h2>
+          <h4>включает в себя всё от кнопок до меню.</h4>
+        </div>
+        <div class="d-flex flex-column justify-start ga-8 align-center">
+          <div class="d-flex flex-column ga-4">
+            <span>Edo Toggle Menu</span>
+            <EdoToggleMenu :content="documents"/>
+          </div>
+          <div class="d-flex ga-8">
+            <div class="d-flex flex-column ga-4">
+              <span>Edo Button</span>
+              <EdoButton 
+                color="primary" 
+                size="large" 
+                rounded="lg"
+              >
+                Отправить документ
+              </EdoButton>
+              <span>Edo Menu</span>
+              <div class="w-10">
+                <EdoMenu 
+                  :items="languages" 
+                  buttonVariant="elevated" 
+                  buttonColor="edo-white"
+                >
+                  рус
+                </EdoMenu>
+                <div class="pt-4 d-flex flex-column ga-4">
+                  <span>Edo Modal</span>
+                  <EdoButton
+                    icon
+                    color="success"
+                    textColor="white"
+                    rounded="lg"
+                    buttonIcon="mdi-plus"
+                    @click="dialog = true"
+                  ></EdoButton>
+                  <EdoModal v-model="dialog">
+                    <h1>Учёт KZ</h1>
+                  </EdoModal>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-column justify-start ga-4 align-center">
+              <span>Edo Card</span>
+              <EdoDashboardCard />
+            </div>
+          </div>
+        </div>
+        <div style="width: 470px">
+          <h3>
+            Kаждый элемент создан для обеспечения легкости интеграции и универсальности применения.
+          </h3>
+        </div>
+      </div>
+    </v-col>
+  </v-row>
+</div>
+</template>
+
+<style lang="scss" scoped>
+.home-container {
+  width: 100%;
+  height: 100%;
+  background-image: url('/background.jpg');
+  background-size: 100% 100%;
+  .v-col {
+    width: 700px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+</style>

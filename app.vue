@@ -8,6 +8,6 @@
 
 <script setup lang="ts">
   useSeoMeta({
-    title: 'Учёт.ЭДО - сервис электронного документа оборота',
+    title: 'Учёт & UI-KIT',
 })
 </script>
