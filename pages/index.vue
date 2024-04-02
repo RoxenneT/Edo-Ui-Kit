@@ -1,5 +1,6 @@
 <script setup>
 const dialog = ref(false);
+
 const documents = [
   {
     title: 'Документы',
@@ -7,9 +8,10 @@ const documents = [
     'Реализация товаров и услуг',
     'Возврат поставщику',
     'Акт сверки',
-    ]
+    ],
   },
 ];
+
 const languages = [
   { title: 'Русский', value: 'ru' },
   { title: 'Қазақша', value: 'kz' }
@@ -17,12 +19,13 @@ const languages = [
 </script>
 
 <template>
-<div class="home-container">
+<div class="tw-home-container">
   <v-row align="center">
     <v-col justify="center">
       <img
         style="width: 600px; height: auto;"
         src="/programming.svg"
+        alt="Boy with pencil"
       /> 
     </v-col>
     <v-col justify="center">
@@ -89,18 +92,11 @@ const languages = [
 </template>
 
 <style lang="scss" scoped>
-.home-container {
-  width: 100%;
-  height: 100%;
-  background-image: url('/background.jpg');
-  background-size: 100% 100%;
-  .v-col {
-    width: 700px;
-    height: 900px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.tw-home-container {
+  @apply w-[100%] min-h-[100%] max-h-fit bg-[url('/background.jpg')] bg-cover
+}
+
+.v-col {
+  @apply w-[700px] h-[100vh] flex flex-col justify-center items-center
 }
 </style>

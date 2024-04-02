@@ -1,16 +1,16 @@
 <template>
   <EdoCard class="pa-10">
-    <div class="edo-document-container">
-      <div class="static">
-        <div class="title">Общие настройки</div>
-        <div class="subtitle">Редактировать</div>
+    <div class="tw-edo-document-container">
+      <div class="tw-static">
+        <div class="tw-title">Общие настройки</div>
+        <div class="tw-subtitle">Редактировать</div>
       </div>
       <div>
-        <div class="info">
-          <div class="state">
+        <div class="tw-info">
+          <div class="tw-state">
             Статус визирования
           </div>
-          <div class="status">
+          <div class="tw-status">
             Активен
           </div>
           </div> 
@@ -20,42 +20,31 @@
 </template>
 
 <style lang="scss" scoped>
-.edo-document-container {
-  width: 743px;
-  height: 96px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  .static {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px;
-    .title {
-      font-weight: bold;
-      line-height: 32px;
-      font-size: 20px;
-    }
-    .subtitle {
-      color: #4d6dc8;
-      &:hover {
-        cursor: pointer;
-        text-decoration: underline;
-      }
-    }
-  }
-  .info {
-    display: flex;
-    .state {
-      width: 236px;
-      color: #7a7a7a;
-      margin-bottom: 16px;
-    }
-    .status {
-      font-weight: 600;
-      margin-bottom: 16px;
-      color: #89cb4e;
-    }
-  }
+.tw-edo-document-container {
+  @apply w-[743px] h-[96px] flex flex-col justify-start
+}
+
+.tw-static {
+  @apply w-[100%] flex justify-between mb-3.5
+}
+
+.tw-title {
+  @apply font-bold leading-8 text-xl
+}
+
+.tw-subtitle {
+  @apply text-[#4d6dc8] hover:cursor-pointer hover:underline
+}
+  
+.tw-info {
+  @apply flex
+}
+
+.tw-state {
+  @apply w-[236px] text-[#7a7a7a] mb-3.5
+}
+
+.tw-status {
+  @apply font-bold mb-3.5 text-[#89cb4e]
 }
 </style>

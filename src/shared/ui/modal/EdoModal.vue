@@ -23,7 +23,7 @@ const close = () => {
   <v-dialog v-model="dialog" width="auto">
     <v-card class="pa-4">
       <EdoButton 
-        class="button"
+        class="tw-button"
         color="white" 
         buttonIcon="mdi-close" 
         icon 
@@ -38,13 +38,10 @@ const close = () => {
 
 <style lang="scss" scoped>
 .v-card {
-  border-radius: 15px !important;
-  max-width: fit-content;
-  max-height: fit-content;
+  @apply rounded-2xl max-w-fit max-h-fit
 }
 
-.button {
-  height: 24px;
-  width: 24px;
+.tw-button {
+  @apply h-[24px] w-[24px]
 }
 </style>

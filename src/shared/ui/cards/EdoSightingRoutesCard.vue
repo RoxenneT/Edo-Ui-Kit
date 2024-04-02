@@ -31,29 +31,29 @@
 
 <template>
   <EdoCard class="pa-10">
-    <div class="edo-document-container">
-      <div class="static">
-        <div class="title">Маршруты визирования</div>
-        <div class="subtitle">
-          <div class="add">
+    <div class="tw-edo-document-container">
+      <div class="tw-static">
+        <div class="tw-title">Маршруты визирования</div>
+        <div class="tw-subtitle">
+          <div class="tw-add">
             <v-icon color="success">mdi-arrow-right-thin</v-icon>
             Добавить
           </div>
-          <div class="edit">
+          <div class="tw-edit">
             <v-icon color="success">mdi-pencil</v-icon>
             Редактировать
           </div>
         </div>
       </div>
       <div>
-        <div class="render-info">
-          <div class="points">
+        <div class="tw-render-info">
+          <div class="tw-points">
             <div v-for="title in documentTitle" :key="title">
               {{ title }}
             </div>
           </div>
-          <div class="info">
-            <div v-for="item in sightingState" :key="item.index">
+          <div>
+            <div class="tw-info" v-for="item in sightingState" :key="item.index">
               {{ item }}
             </div>
           </div> 
@@ -64,48 +64,39 @@
 </template>
 
 <style lang="scss" scoped>
-.edo-document-container {
-  width: 743px;
-  height: 536px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  .static {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px;
-    .title {
-      font-weight: bold;
-      line-height: 32px;
-      font-size: 20px;
-    }
-    .subtitle {
-      color: #4d6dc8;
-      display: flex;
-      width: 260px;
-      justify-content: space-between;
-      .add:hover, .edit:hover {
-        cursor: pointer;
-        text-decoration: underline;
-      }
-    }
-  }
-  .render-info {
-    display: flex;
-    .points {
-      width: 236px;
-      div {
-        color: #7a7a7a;
-        margin-bottom: 16px;
-      }
-    }
-    .info {
-      div {
-        font-weight: 500;
-        margin-bottom: 16px;
-      }
-    }
-  }
+.tw-edo-document-container {
+  @apply w-[743px] h-fit flex flex-col justify-start
+}
+
+.tw-static {
+  @apply w-[100%] flex justify-between mb-3.5
+}
+
+.tw-title {
+  @apply font-bold leading-8 text-xl
+}
+
+.tw-subtitle {
+  @apply text-[#4d6dc8] flex w-[260px] justify-between
+}
+
+.tw-add, .tw-edit {
+  @apply hover:cursor-pointer hover:underline
+}
+
+.tw-render-info {
+  @apply flex
+}
+
+.tw-points {
+  @apply w-[236px]
+}
+
+.tw-points > div {
+  @apply text-[#7a7a7a] mb-3.5
+}
+     
+.tw-info {
+  @apply font-medium mb-3.5
 }
 </style>

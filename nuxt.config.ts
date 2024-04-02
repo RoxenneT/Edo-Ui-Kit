@@ -6,7 +6,7 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
-  css: ['~/assets/scss/main.scss'],
+  css: ['~/assets/scss/main.scss', '~/assets/scss/tailwind.scss'],
   devtools: { enabled: true },
   build: {
     transpile: ['vuetify'],
@@ -18,6 +18,7 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
+    '@nuxtjs/tailwindcss',
     //...
   ],
   vite: {

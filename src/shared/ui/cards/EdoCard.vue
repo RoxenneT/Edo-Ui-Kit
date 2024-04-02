@@ -8,8 +8,8 @@ const props = defineProps({
 <v-hover v-if="enableHover">
   <template v-slot:default="{ isHovering, props }">
     <div 
-      class="edo-card-container"
-      :class="{ 'hover-effect': isHovering }"
+      class="tw-edo-card-container"
+      :class="{ 'tw-hover-effect': isHovering }"
       v-bind="props"
     >
       <slot></slot>
@@ -18,23 +18,18 @@ const props = defineProps({
 </v-hover>
 <div 
   v-else
-  class="edo-card-container"
+  class="tw-edo-card-container"
 >
   <slot></slot>
 </div>
 </template>
 
 <style lang="scss" scoped>
-.edo-card-container {
-  width: fit-content;
-  height: fit-content;
-  background-color: #f8fbff;
-  box-shadow: -20px 20px 32px rgba(0,0,0,.06), 0 1px 1px rgba(0,0,0,.1);
-  border-radius: 20px;
+.tw-edo-card-container {
+  @apply w-fit h-fit bg-[#fff] shadow-[-20px_20px_32px_rgba(0,0,0,.06),_0_1px_1px_rgba(0,0,0,.1)] rounded-3xl
 }
 
-.hover-effect {
-  box-shadow: none !important;
-  cursor: pointer;
+.tw-hover-effect {
+  @apply shadow-none cursor-pointer
 }
 </style>

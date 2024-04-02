@@ -46,8 +46,8 @@ const deleteUserEmail = (indexToDelete) => {
 </script>
 
 <template>
-  <div class="modal-holder">
-    <v-card-title class="model-title">
+  <div class="tw-modal-holder">
+    <v-card-title class="tw-model-title">
       Добавление маршрута визирования
     </v-card-title>
     <v-card-text>
@@ -68,7 +68,7 @@ const deleteUserEmail = (indexToDelete) => {
               v-model="selectedUserEmail" 
             />
           </div>
-          <div class="switch-holder">
+          <div class="tw-switch-holder">
             <span>Глобальный маршрут</span>
             <EdoSwitch />
           </div>
@@ -95,24 +95,15 @@ const deleteUserEmail = (indexToDelete) => {
 </template>
 
 <style lang="scss" scoped>
-  .modal-holder {
-    width: 900px;
-    height: 471px;
-    .model-title {
-      height: 40px;
-      border-bottom: 2px solid rgb(236, 236, 236);
-      font-weight: bold;
-      font-size: 22px !important;
-      padding: 0 !important;
-      padding-bottom: 16px !important;
-      margin-bottom: 16px !important;
-      text-align: center !important;
-    }
-  }
-  .switch-holder {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 18px !important;
-  }
+.tw-modal-holder {
+  @apply w-[900px] h-[471px]
+}
+
+.tw-model-title {
+  @apply h-[40px] border-b-2 border-solid border-slate-300 font-bold text-2xl p-0 pb-3.5 mb-3.5 text-center
+}
+  
+.tw-switch-holder {
+  @apply flex justify-between items-center text-lg
+}
 </style>

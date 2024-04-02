@@ -1,12 +1,12 @@
 <template>
   <EdoCard class="py-9 px-10">
-    <div class="company-container">
-      <div class="holder">
-        <div class="static">
-          <div class="title">АО "ТРАНСТЕЛЕКОМ"</div>
-          <div class="subtitle">980525350925</div>
+    <div class="tw-company-container">
+      <div class="tw-holder">
+        <div class="tw-static">
+          <div class="tw-title">АО "ТРАНСТЕЛЕКОМ"</div>
+          <div class="tw-subtitle">980525350925</div>
         </div>
-      <div class="buttons-holder">
+      <div class="tw-buttons-holder">
         <EdoButton 
           color="red" 
           variant="tonal" 
@@ -28,12 +28,12 @@
         </EdoButton>
       </div>
       </div>
-      <div class="holder">
-        <div class="static">
-          <div class="title">АО "ТЕСТ"</div>
-          <div class="subtitle">123456789021</div>
+      <div class="tw-holder">
+        <div class="tw-static">
+          <div class="tw-title">АО "ТЕСТ"</div>
+          <div class="tw-subtitle">123456789021</div>
         </div>
-      <div class="buttons-holder">
+      <div class="tw-buttons-holder">
         <EdoButton 
           color="red" 
           variant="tonal" 
@@ -61,35 +61,27 @@
 </template>
 
 <style lang="scss" scoped>
-  .company-container {
-    width: 502px;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    .holder {
-      height: 44px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 32px;
-      .static {
-        width: 161px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        .title {
-          font-weight: bold;
-          line-height: 24px;
-        }
-        .subtitle {
-          line-height: 20px;
-          font-size: 14px;
-        }
-      }
-      .buttons-holder {
-        display: flex;
-        gap: 4px;
-      }
-    }
-  }
+.tw-company-container {
+  @apply w-[502px] h-[120px] flex flex-col
+}
+
+.tw-holder {
+  @apply h-[44px] flex justify-between items-center mb-[32px]
+}
+
+.tw-static {
+  @apply w-[161px] flex flex-col items-start
+}
+
+.tw-title {
+  @apply font-bold leading-6
+}
+        
+.tw-subtitle {
+  @apply leading-5 text-sm
+}
+      
+.tw-buttons-holder {
+  @apply flex gap-2
+}
 </style>

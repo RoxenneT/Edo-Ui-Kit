@@ -14,9 +14,9 @@ const props = defineProps({
           :color="buttonColor"
           :variant="buttonVariant"
           v-bind="props"
-          class="bold-text tight-spacing "
+          class="bold-text tight-spacing"
         >
-          <div class="edo-menu-content">
+          <div class="tw-edo-menu-content">
             <v-icon v-if="buttonIcon">{{ buttonIcon }}</v-icon>
             <slot />
           </div>
@@ -35,19 +35,15 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-.edo-menu-comtent {
-  gap: 4px;
+.tw-edo-menu-comtent {
+  @apply gap-1
 }
 
 .v-list .v-list-item--density-default{
-  padding: 6px !important;
-  min-height: 39px !important;
+  @apply p-1.5 min-h-[39px]
 }
 
 .v-list-item .v-list-item-title{
-  width: 120px;
-  font-weight: 400 !important; 
-  font-size: 14px !important;
-  text-align: center;
+  @apply w-[120px] font-normal text-sm items-center
 }
 </style>

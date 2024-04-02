@@ -1,11 +1,3 @@
-<template>
-  <div class="switch-wrapper" @click="toggleSwitch">
-    <div class="switch-track" :class="{ 'active': isActive }">
-      <div class="switch-thumb" :style="thumbStyle"></div>
-    </div>
-  </div>
-</template>
-
 <script setup>
 import { ref, computed } from 'vue';
 
@@ -22,29 +14,27 @@ const thumbStyle = computed(() => {
 });
 </script>
 
+<template>
+  <div class="tw-switch-wrapper" @click="toggleSwitch">
+    <div class="tw-switch-track" :class="{ 'active': isActive }">
+      <div class="tw-switch-thumb" :style="thumbStyle"></div>
+    </div>
+  </div>
+</template>
+
 <style>
-.switch-wrapper {
-  cursor: pointer;
-  display: inline-block;
+.tw-switch-wrapper {
+  @apply cursor-pointer inline-block
 }
-.switch-track {
-  width: 64px;
-  height: 32px;
-  background-color: #ccc; 
-  border-radius: 999px;
-  transition: background-color 0.25s;
-  display: flex;
-  align-items: center;
-  padding: 1px;
+.tw-switch-track {
+  @apply w-[64px] h-[32px] flex items-center p-px bg-[#ccc] rounded-full transition-[0.25s]
+
 }
-.switch-track.active {
-  background-color: #89cb4e; 
+.tw-switch-track.active {
+  @apply bg-[#89cb4e] 
 }
-.switch-thumb {
-  width: 30px;
-  height: 30px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.25s;
+.tw-switch-thumb {
+  @apply w-[30px] h-[30px] bg-white rounded-full transition-[0.25s] delay-100
+ 
 }
 </style>

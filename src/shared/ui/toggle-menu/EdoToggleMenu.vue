@@ -18,7 +18,7 @@
         :key="`item-${index}`"
       >
         <v-expansion-panel-title>
-          <div class="title">{{ item.title }}</div>
+          <div class="tw-title">{{ item.title }}</div>
         </v-expansion-panel-title>
         <v-expansion-panel-text 
           v-for="(text, textIndex) in item.points" 
@@ -39,21 +39,26 @@
 
 <style lang="scss" scoped>
   .v-expansion-panels {
-    width: 300px;
+    @apply w-[300px]
+  }
+
+  .v-expansion-panel.rounded-lg {
+    &:first-child{
+      border-top-left-radius: 8px !important;
+      border-top-right-radius: 8px !important;
+    }
+    &:last-child {
+      border-bottom-left-radius: 8px !important;
+      border-bottom-right-radius: 8px !important;
+    }
   }
 
   :deep(.v-expansion-panel-text__wrapper) {
-    padding: 0 !important;
-    height: 69px;
-    display: flex;
-    align-items: center;
-    border-top: 1px solid rgba(0, 0, 0, .1);
+    @apply p-0 h-[69px] flex items-center border-t border-solid border-slate-200
   }
 
-  .title {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
+  .tw-title {
+    @apply font-bold text-base leading-6
   }
 
   .points {

@@ -41,7 +41,7 @@ const onClick = () => {
         :cursor="cursor"
         @click="onClick"
         v-bind="props"
-        class="bold-text tight-spacing"
+        class="tw-bold-text tw-tight-spacing"
       >
         <div class="edo-button-content">
           <v-icon v-if="buttonIcon">{{ buttonIcon }}</v-icon>
@@ -62,7 +62,7 @@ const onClick = () => {
     :density="density"
     :cursor="cursor"
     @click="onClick"
-    class="bold-text tight-spacing"
+    class="tw-bold-text tw-tight-spacing"
   >
     <div class="edo-button-content">
       <v-icon v-if="buttonIcon">{{ buttonIcon }}</v-icon>
@@ -73,16 +73,14 @@ const onClick = () => {
 
 <style lang="scss" scoped>
 .black :deep(.v-btn__content){
-  color: black !important;
+  @apply text-black
 }
 
 .edo-button-content {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  @apply flex items-center gap-1
 }
 
 .white :deep(.v-btn__content){
-  color: #fff !important;
+  @apply text-[#fff]
 }
 </style>

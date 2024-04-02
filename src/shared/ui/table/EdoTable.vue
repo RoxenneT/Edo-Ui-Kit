@@ -9,7 +9,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(row, rowIndex) in rows" :key="rowIndex">
+        <tr class="hover:bg-gray-50" v-for="(row, rowIndex) in rows" :key="rowIndex">
           <td v-for="(header, index) in headers" :key="index">
             <template v-if="header.slot">
               <slot :name="header.slot" :row="row" :index="rowIndex"></slot>
@@ -33,36 +33,26 @@
 
 <style lang="scss" scoped>
 v-simple-table {
-  display: flex;
-  flex-direction: column;
-  width: 100% !important;
-  min-height: 83px !important;
-  max-height: fit-content;
-  background: #fff;
-  box-shadow: 0 4px 32px rgba(0,0,0,.06), 0 1px 1px rgba(0,0,0,.1);
-  border-radius: 12px;
-  thead {
-    width: 100%;
-    th {
-      padding: 24px 32px 7px;
-      color: #7a7a7a;
-      font-size: 14px;
-      line-height: 20px;
-    }
-  }
-  tbody {
-    width: 100%;
-    tr{
-      width: 100%;
-      &:hover {
-        background: hsla(0, 0%, 93.3%, .452) !important;
-      } 
-    }
-    td {
-      padding: 0 33.2px;
-      font-size: 16px;
-      font-weight: 500;
-    }
-  }
+  @apply flex flex-col w-[100%] min-h-[83px] max-h-fit bg-[#fff] rounded-xl
+  shadow-[0_4px_32px_rgba(0,0,0,.06),_0_1px_1px_rgba(0,0,0,.1)]
+}
+thead {
+  @apply w-[100%]
+}
+
+th {
+  @apply px-11 pt-6 pb-2 text-[#7a7a7a] text-sm leading-5
+}
+
+tbody {
+  @apply w-[100%] 
+}
+
+tr{
+  @apply w-[100%]
+}
+  
+td {
+  @apply px-11 text-base font-medium 
 }
 </style>

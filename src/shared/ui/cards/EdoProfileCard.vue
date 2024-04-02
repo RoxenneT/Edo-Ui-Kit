@@ -17,20 +17,20 @@
 
 <template>
   <EdoCard class="pa-10">
-    <div class="edo-document-container">
-      <div class="static">
-        <div class="title">Общая информация</div>
-        <div class="subtitle">Редактировать профиль</div>
+    <div class="tw-edo-document-container">
+      <div class="tw-static">
+        <div class="tw-title">Общая информация</div>
+        <div class="tw-subtitle">Редактировать профиль</div>
       </div>
       <div>
-        <div class="render-info">
-          <div class="points">
+        <div class="tw-render-info">
+          <div class="tw-points">
             <div v-for="title in titleInfo" :key="title">
               {{ title }}
             </div>
           </div>
-          <div class="info">
-            <div v-for="item in profileInfo" :key="item.index">
+          <div>
+            <div class="tw-info" v-for="item in profileInfo" :key="item.index">
               {{ item }}
             </div>
           </div> 
@@ -41,45 +41,35 @@
 </template>
 
 <style lang="scss" scoped>
-.edo-document-container {
-  width: 743px;
-  height: 272px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  .static {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px;
-    .title {
-      font-weight: bold;
-      line-height: 32px;
-      font-size: 20px;
-    }
-    .subtitle {
-      color: #4d6dc8;
-      &:hover {
-        cursor: pointer;
-        text-decoration: underline;
-      }
-    }
-  }
-  .render-info {
-    display: flex;
-    .points {
-      width: 236px;
-      div {
-        color: #7a7a7a;
-        margin-bottom: 16px;
-      }
-    }
-    .info {
-      div {
-        font-weight: 500;
-        margin-bottom: 16px;
-      }
-    }
-  }
+.tw-edo-document-container {
+  @apply w-[743px] h-[272px] flex flex-col justify-start
+}
+
+.tw-static {
+  @apply w-[100%] flex justify-between mb-3.5
+}
+
+.tw-title {
+  @apply font-bold leading-8 text-xl
+}
+
+.tw-subtitle {
+  @apply text-[#4d6dc8] hover:cursor-pointer hover:underline
+}
+     
+.tw-render-info {
+  @apply flex
+}
+
+.tw-points {
+  @apply w-[236px]
+}
+
+.tw-points > div {
+  @apply text-[#7a7a7a] mb-3.5 font-medium
+}
+  
+.tw-info {
+  @apply font-medium mb-3.5 
 }
 </style>

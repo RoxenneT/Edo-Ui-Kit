@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Roboto;
+  src: url(/font/Roboto-Regular.ttf);
+}
+
 * {
   font-family: Roboto, sans-serif;
   text-transform: none !important;
@@ -9,22 +14,17 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: #f8fbff;
 }
 
-@font-face {
-  font-family: Roboto;
-  src: url(/font/Roboto-Regular.ttf);
-}
-
-.tight-spacing {
+.tw-tight-spacing {
   letter-spacing: -0.01em !important; 
 }
 
-.loose-spacing {
+.tw-loose-spacing {
   letter-spacing: 0.1em; 
 }
 
-.bold-text {
+.tw-bold-text {
   font-weight: 600 !important;
 }
