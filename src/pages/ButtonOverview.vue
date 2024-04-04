@@ -145,7 +145,7 @@
         <div class="mb-8">
           <div v-for="(item, index) in variantInfo" :key="index" class="flex bg-zinc-100 border-2 border-solid border-white">
             <div class="w-24 bg-[#00a0e3] text-white text-lg pl-2">{{ item.title }}</div>
-            <div class="w-[495px] text-lg px-2">{{ item.text }}</div>
+            <div class="w-[495px] text-slate-600 text-base px-2">{{ item.text }}</div>
           </div>
         </div>
         <ButtonUsage 
