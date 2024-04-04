@@ -11,7 +11,7 @@
           permanent
         >
           <v-list nav>
-            <v-list-item>
+            <v-list-item @click="router.push({ name: 'index' })">
               <div class="tw-logo mb-4">
                 <div>
                   <v-img
@@ -24,12 +24,10 @@
                 </div>
               </div>
             </v-list-item>
-           
-            <v-list-item @click="router.push({ name: 'index' })">Главная</v-list-item>
-            <v-list-item @click="router.push({ name: 'components-buttons' })">Кнопки</v-list-item>
+            <v-list-item @click="router.push({ name: 'components-buttons' })">Buttons</v-list-item>
           </v-list>
         </v-navigation-drawer>
-        <v-main style="height: 100vh">
+        <v-main class="max-h-fit min-h-[100vh]">
           <slot></slot>
         </v-main>
       </v-layout>

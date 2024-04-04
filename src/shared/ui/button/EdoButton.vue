@@ -2,7 +2,7 @@
 const props = defineProps({
   color: { type: String, default: '#00a0e3' },
   disabled: { type: Boolean, default: false },
-  elevation: { type: Number, default: 0 },
+  elevation: { type: Number },
   icon: { type: Boolean, default: false },
   buttonIcon: { type: String, default: '' },
   rounded: { type: String, default: '0' },
@@ -33,7 +33,7 @@ const onClick = () => {
         :color="color"
         :icon="icon"
         :disabled="disabled"
-        :variant="isHovering ? 'outlined' : 'flat'"
+        :variant="isHovering ? 'outlined' : none"
         :elevation="elevation"
         :size="size"
         :rounded="rounded"
