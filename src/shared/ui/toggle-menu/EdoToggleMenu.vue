@@ -43,18 +43,11 @@
   }
 
   .v-expansion-panel.rounded-lg {
-    &:first-child{
-      border-top-left-radius: 8px !important;
-      border-top-right-radius: 8px !important;
-    }
-    &:last-child {
-      border-bottom-left-radius: 8px !important;
-      border-bottom-right-radius: 8px !important;
-    }
+    @apply first:rounded-t-lg first:rounded-b-lg last:rounded-t-lg last:rounded-b-lg #{!important};
   }
 
   :deep(.v-expansion-panel-text__wrapper) {
-    @apply p-0 h-[69px] flex items-center border-t border-solid border-slate-200
+    @apply p-0 h-[69px] flex items-center border-t border-solid border-slate-200 cursor-pointer
   }
 
   .tw-title {
@@ -62,26 +55,10 @@
   }
 
   .points {
-    font-size: 12px;
-    line-height: 18px;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    &.is-active, &:hover {
-      background: #ecf5ff;
-      cursor: pointer;
-      &::after {
-        content: "";
-        width: 2px;
-        height: 22px;
-        background: #89cb4e;
-        display: block;
-        position: absolute;
-        top: 30%;
-        left: 0%;
-      }
-    } 
+    @apply text-xs leading-4 relative w-[100%] h-[100%] flex items-center
+  }
+
+  .is-active {
+    @apply hover:bg-[#ecf5ff] bg-[#ecf5ff] after:content-[''] after:w-[2px] after:h-[22px] after:bg-[#89cb4e] after:block after:absolute after:top-[30%] after:left-0
   }
 </style>

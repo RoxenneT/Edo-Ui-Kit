@@ -1,54 +1,54 @@
 <script setup>
   const buttonDefault = [{ name: 'Button' }];
   const buttonElevation = [
-    {value: '4', value2: 'large', name: 'Elevation 4'},
-    {value: '8', value2: 'large', name: 'Elevation 8'},
-    {value: '12', value2: 'large', name: 'Elevation 12'},
-    {value: '16', value2: 'large', name: 'Elevation 16'},
-    {value: '20', value2: 'large', name: 'Elevation 20'},
-    {value: '24', value2: 'large', name: 'Elevation 24'},
+    {attributes: {elevation: '4', size: 'large'}, name: 'Elevation 4'},
+    {attributes: {elevation: '8', size: 'large'}, name: 'Elevation 8'},
+    {attributes: {elevation: '12', size: 'large'}, name: 'Elevation 12'},
+    {attributes: {elevation: '16', size: 'large'}, name: 'Elevation 16'},
+    {attributes: {elevation: '20', size: 'large'}, name: 'Elevation 20'},
+    {attributes: {elevation: '24', size: 'large'}, name: 'Elevation 24'},
   ];
   const buttonSizes = [
-    {value: 'x-small', name: 'Extra small Button'},
-    {value: 'small', name: 'Small Button'},
+    {attributes: {size: 'x-small'}, name: 'Extra small Button'},
+    {attributes: {size: 'small'}, name: 'Small Button'},
     {name: 'Regular Button'},
-    {value: 'large', name: 'Large Button'},
-    {value: 'x-large', name: 'X-Large Button'},
+    {attributes: {size: 'large'}, name: 'Large Button'},
+    {attributes: {size: 'x-large'}, name: 'X-large Button'},
   ];
   const buttonRoundness = [
-    {value: '0', value2: 'large', name: 'Rounded 0'},
-    {value: 'xs', value2: 'large', name: 'Rounded xs'},
-    {value: 'sm', value2: 'large', name: 'Rounded sm'},
-    {value: 'lg', value2: 'large', name: 'Rounded lg'},
-    {value: 'xl', value2: 'large', name: 'Rounded xl'},
+    {attributes: {rounded: '0', size: 'large'}, name: 'Rounded 0'},
+    {attributes: {rounded: 'xs', size: 'large'}, name: 'Rounded xs'},
+    {attributes: {rounded: 'sm', size: 'large'}, name: 'Rounded sm'},
+    {attributes: {rounded: 'lg', size: 'large'}, name: 'Rounded lg'},
+    {attributes: {rounded: 'xl', size: 'large'}, name: 'Rounded xl'},
   ];
   const buttonColor = [
-    {value: '#00a0e3', name: 'Button'},
-    {value: '#89cb4e', value2: 'white', name: 'Button'},
-    {value: '#fca5a5', value2: 'black', name: 'Button'},
-    {value: '#facc15', name: 'Button'},
-    {value: '#4f46e5', name: 'Button'},
+    {attributes: {color: '#00a0e3', size: 'large'}, name: 'Button'},
+    {attributes: {color: '#89cb4e', textColor: 'white', size: 'large'}, name: 'Button'},
+    {attributes: {color: '#fca5a5',textColor: 'black', size: 'large'}, name: 'Button'},
+    {attributes: {color: '#facc15', size: 'large'}, name: 'Button'},
+    {attributes: {color: '#4f46e5', size: 'large'}, name: 'Button'},
   ];
   const buttonIcons = [
-    {value: 'mdi-plus', value2: 'lg'},
-    {value: 'mdi-cog', value2: 'xl'},
-    {value: 'mdi-delete-outline', value2: 'lg'},
-    {value: 'mdi-thumb-up', value2: 'xl'},
-    {value: 'mdi-heart', value2: 'lg'}
+    {attributes: {buttonIcon: 'mdi-plus', rounded: 'xl', icon: true}},
+    {attributes: {buttonIcon: 'mdi-cog', rounded: 'lg', icon: true}},
+    {attributes: {buttonIcon: 'mdi-delete-outline', rounded: 'xl', icon: true}},
+    {attributes: {buttonIcon: 'mdi-thumb-up', rounded: 'lg', icon: true}},
+    {attributes: {buttonIcon: 'mdi-heart', rounded: 'xl', icon: true}},
   ];
   const buttonIconsText = [
-    {value: 'mdi-heart', value2: 'lg', value3: 'x-large', name: 'Button'}
+    {attributes: {buttonIcon: 'mdi-heart', rounded: 'lg', size: 'x-large'}, name: 'Button'}
   ];
   const buttonVariant = [
-    {value: 'elevated', value2: 'large', name: 'Elevated'},
-    {value: 'flat', value2: 'large', name: 'Flat'},
-    {value: 'tonal', value2: 'large', name: 'Tonal'},
-    {value: 'outlined', value2: 'large', name: 'Outlined'},
-    {value: 'text', value2: 'large', name: 'Text'},
-    {value: 'plain', value2: 'large', name: 'Plain'}
+    {attributes: {variant: 'elevated', size: 'large'}, name: 'Elevated'},
+    {attributes: {variant: 'flat', size: 'large'}, name: 'Flat'},
+    {attributes: {variant: 'tonal', size: 'large'}, name: 'Tonal'},
+    {attributes: {variant: 'outlined', size: 'large'}, name: 'Outlined'},
+    {attributes: {variant: 'text', size: 'large'}, name: 'Text'},
+    {attributes: {variant: 'plain', size: 'large'}, name: 'Plain'}
   ];
   const buttonHover = [
-    {value: 'outlined', value2: 'large', value3: 'enableHover', name: 'Enable Hover'},
+    {attributes: {variant: 'outlined', size: 'large', enableHover: 'true'}, name: 'Enable Hover'},
   ];
   const variantInfo = [
     {title: 'elevated', text: 'приподнимает кнопку с тенью'},
@@ -91,21 +91,16 @@
         <ButtonUsage 
           title="Size"
           :items="buttonSizes"
-          attribute="size"
         />
         <h3>Используйте rounded prop, чтобы контролировать радиус границы кнопки.</h3>
         <ButtonUsage 
           title="Rounded"
           :items="buttonRoundness"
-          attribute="rounded"
-          attribute2="size"
         />
         <h3>Свойство elevation обеспечивает до 24 уровней глубины тени.</h3>
         <ButtonUsage 
           title="Elevation"
           :items="buttonElevation"
-          attribute="elevation"
-          attribute2="size"
         />
         <h3>
           При передаче color, цвет текста автоманически меняется на белый или черный в зависимости от фона. 
@@ -115,8 +110,6 @@
         <ButtonUsage 
           title="Color & textColor"
           :items="buttonColor"
-          attribute="color"
-          attribute2="textColor"
         />
          <h3>
           Icon можно использовать для основного содержимого кнопки. Prop icon добавляет стили для иконки.
@@ -127,16 +120,10 @@
         <ButtonUsage 
           title="Icon"
           :items="buttonIcons"
-          attribute="buttonIcon"
-          attribute2="rounded"
-          attribute3="icon"
         />
         <ButtonUsage 
           title="Icon & Text"
           :items="buttonIconsText"
-          attribute="buttonIcon"
-          attribute2="rounded"
-          attribute3="size"
         />
         <h3>
           The variant prop дает вам легкий доступ к нескольким различным стилям кнопок. 
@@ -151,15 +138,10 @@
         <ButtonUsage 
           title="Variant"
           :items="buttonVariant"
-          attribute="variant"
-          attribute2="size"
         />
         <ButtonUsage 
           title="EnableHover"
           :items="buttonHover"
-          attribute="variant"
-          attribute2="size"
-          attribute3="enableHover"
         />
       </div>
     </div> 
