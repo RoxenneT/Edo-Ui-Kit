@@ -1,3 +1,10 @@
+<script setup>
+defineProps({
+  title: String,
+  items: Array,
+})
+</script>
+
 <template>
   <div class="w-[100%] mb-8">
     <v-expansion-panels variant="accordion" class="w-[100%]">
@@ -8,26 +15,26 @@
         <v-expansion-panel-text class="bg-black">
           <code class="code">
             <div v-for="(item, index) in items" :key="index" class="mb-4">
-              <span class="text-[#e2777a]">
+              <span class="text-[#91c7f4]">
                 &lt;EdoButton
               </span>
               <span 
                 v-for="(value, name) in item.attributes" 
                 :key="name" 
-                class="text-[#e2777a] ml-1"
+                class="text-[#91c7f4] ml-1"
               >
                <template v-if="value === true">
                   {{ name }}
                 </template>
                 <template v-else>
-                  {{ name }}="<span class="text-[#7ec699]">{{ value }}</span>"
+                  {{ name }}="<span class="text-[#7bf6b8]">{{ value }}</span>"
                 </template>
               </span>
-              <span class="text-[#e2777a] deleteSpace">
+              <span class="text-[#91c7f4] deleteSpace">
                 &gt;
               </span>
               <span class="deleteSpaces">{{ item.name }}</span>
-              <span class="text-[#e2777a]">
+              <span class="text-[#91c7f4]">
                 &lt;/EdoButton&gt;
               </span>
             </div>
@@ -47,16 +54,9 @@
   </div>
 </template>
 
-<script setup>
-defineProps({
-  title: String,
-  items: Array,
-})
-</script>
-
 <style lang="scss" scoped>
 .presentation { 
-  @apply w-[100%] min-h-[130px] max-h-fit bg-zinc-100 flex justify-center items-center gap-5 flex-wrap;
+  @apply w-[100%] min-h-[130px] max-h-fit bg-blue-100 flex justify-center items-center gap-5 flex-wrap;
 }
 
 .deleteSpace {

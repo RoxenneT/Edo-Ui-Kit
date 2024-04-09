@@ -96,14 +96,14 @@ const deleteUserEmail = (indexToDelete) => {
 
 <style lang="scss" scoped>
 .tw-modal-holder {
-  @apply w-[900px] h-[471px]
+  @apply w-[900px] h-[471px];
 }
 
 .tw-model-title {
-  @apply h-[40px] border-b-2 border-solid border-slate-300 font-bold text-2xl p-0 pb-3.5 mb-3.5 text-center
+  @apply h-[40px] border-b-2 border-solid border-slate-300 font-bold text-2xl p-0 pb-3.5 mb-3.5 text-center;
 }
   
 .tw-switch-holder {
-  @apply flex justify-between items-center text-lg
+  @apply flex justify-between items-center text-lg;
 }
 </style>

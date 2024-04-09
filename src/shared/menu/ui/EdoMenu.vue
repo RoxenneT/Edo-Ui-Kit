@@ -44,6 +44,6 @@ const props = defineProps({
 }
 
 .v-list-item .v-list-item-title{
-  @apply w-[120px] font-normal text-sm items-center
+  @apply w-[120px] font-normal text-sm flex justify-center
 }
 </style>

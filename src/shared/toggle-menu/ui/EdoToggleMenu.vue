@@ -47,18 +47,18 @@
   }
 
   :deep(.v-expansion-panel-text__wrapper) {
-    @apply p-0 h-[69px] flex items-center border-t border-solid border-slate-200 cursor-pointer
+    @apply p-0 h-[69px] flex items-center border-t border-solid border-slate-200 cursor-pointer;
   }
 
   .tw-title {
-    @apply font-bold text-base leading-6
+    @apply font-bold text-base leading-6;
   }
 
   .points {
-    @apply text-xs leading-4 relative w-[100%] h-[100%] flex items-center
+    @apply text-xs leading-4 relative w-[100%] h-[100%] flex items-center;
   }
 
   .is-active {
-    @apply hover:bg-[#ecf5ff] bg-[#ecf5ff] after:content-[''] after:w-[2px] after:h-[22px] after:bg-[#89cb4e] after:block after:absolute after:top-[30%] after:left-0
+    @apply hover:bg-[#ecf5ff] bg-[#ecf5ff] after:content-[''] after:w-[2px] after:h-[22px] after:bg-[#89cb4e] after:block after:absolute after:top-[30%] after:left-0;
   }
 </style>

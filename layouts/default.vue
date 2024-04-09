@@ -25,6 +25,7 @@
               </div>
             </v-list-item>
             <v-list-item @click="router.push({ name: 'components-buttons' })">Buttons</v-list-item>
+            <v-list-item @click="router.push({ name: 'components-inputs' })">Inputs</v-list-item>
           </v-list>
         </v-navigation-drawer>
         <v-main class="max-h-fit min-h-[100vh]">
@@ -41,7 +42,7 @@
   }
 
   .v-navigation-drawer {
-    @apply text-[#138fc4] text-lg font-bold
+    @apply text-[#138fc4] text-lg font-bold bg-[#f8fbff]
   }
 
   .v-list {
