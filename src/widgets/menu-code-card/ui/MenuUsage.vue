@@ -16,7 +16,7 @@ defineProps({
           <code class="code">
             <div v-for="(item, index) in items" :key="index" class="mb-4 flex flex-col">
               <span class="text-[#91c7f4]">
-                &lt;EdoButton
+                &lt;EdoMenu
               </span>
               <span 
                 v-for="(value, name) in item.attributes" 
@@ -35,7 +35,7 @@ defineProps({
               </span>
               <span class="deleteSpaces ml-4">{{ item.name }}</span>
               <span class="text-[#91c7f4]">
-                &lt;/EdoButton&gt;
+                &lt;/EdoMenu&gt;
               </span>
             </div>
           </code>
@@ -43,13 +43,16 @@ defineProps({
       </v-expansion-panel>
     </v-expansion-panels>
     <div class="presentation">
-      <EdoButton 
+      <div class="w-fit h-fit bg-white rounded-lg">
+        <EdoMenu 
         v-for="(item, index) in items" 
         :key="index" 
         v-bind="item.attributes"
+        :items="item.arrayData"
       >
         {{ item.name }}
-      </EdoButton>
+      </EdoMenu>
+      </div> 
     </div>
   </div>
 </template>

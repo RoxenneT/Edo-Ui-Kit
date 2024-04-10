@@ -44,7 +44,7 @@ function setActivePoint(pointKey) {
   }
 
   .v-expansion-panel.rounded-lg {
-    @apply first:rounded-t-lg first:rounded-b-lg last:rounded-t-lg last:rounded-b-lg #{!important};
+    @apply first:rounded-t-lg last:rounded-b-lg #{!important};
   }
 
   :deep(.v-expansion-panel-text__wrapper) {
@@ -56,10 +56,10 @@ function setActivePoint(pointKey) {
   }
 
   .points {
-    @apply text-xs leading-4 relative w-[100%] h-[100%] flex items-center;
+    @apply text-xs leading-4 relative w-[100%] h-[100%] flex items-center hover:bg-[#ecf5ff] ;
   }
 
   .is-active {
-    @apply hover:bg-[#ecf5ff] bg-[#ecf5ff] after:content-[''] after:w-[2px] after:h-[22px] after:bg-[#89cb4e] after:block after:absolute after:top-[30%] after:left-0;
+    @apply bg-[#ecf5ff] after:content-[''] after:w-[2px] after:h-[22px] after:bg-[#89cb4e] after:block after:absolute after:top-[30%] after:left-0;
   }
 </style>

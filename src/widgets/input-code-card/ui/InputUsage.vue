@@ -12,16 +12,16 @@
         <v-expansion-panel-text class="bg-black">
           <code class="code">
             <div class="mb-4">
-              <span class="text-[#91c7f4]">
+              <span class="text-[#91c7f4] flex flex-col">
                 &lt;EdoInput
               </span>
-              <span class="text-[#91c7f4] ml-1">
-                  type="<span class="text-[#7bf6b8]">text</span>"
-                  placeholder="<span class="text-[#7bf6b8]">ЭДО input</span>"
-                  v-model="<span class="text-[#7bf6b8]">inputValue</span>"
-                  minLength="<span class="text-[#7bf6b8]">1</span>"
-                  maxLength="<span class="text-[#7bf6b8]">20</span>"
-              </span>
+              <div class="text-[#91c7f4] ml-4 flex flex-col">
+                  <span>type="<span class="text-[#7bf6b8]">text</span>"</span>
+                  <span>placeholder="<span class="text-[#7bf6b8]">ЭДО input</span>"</span> 
+                  <span>v-model="<span class="text-[#7bf6b8]">inputValue</span>"</span>
+                  <span>minLength="<span class="text-[#7bf6b8]">1</span>"</span>
+                  <span>maxLength="<span class="text-[#7bf6b8]">20</span>"</span>
+              </div>
               <span class="text-[#91c7f4]">
                 /&gt;
               </span>
@@ -30,7 +30,7 @@
               <span class="text-[#91c7f4]">
                 &lt;script <span class="text-[#e9e978]">setup</span>&gt;  
               </span>
-              <span class="text-[orange]">
+              <span class="text-[orange] ml-4">
                 const
                 <span class="text-[#7bf6b8]">
                   inputValue

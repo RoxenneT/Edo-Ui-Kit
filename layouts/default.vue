@@ -26,6 +26,7 @@
             </v-list-item>
             <v-list-item @click="router.push({ name: 'components-buttons' })">Buttons</v-list-item>
             <v-list-item @click="router.push({ name: 'components-inputs' })">Inputs</v-list-item>
+            <v-list-item @click="router.push({ name: 'components-menus' })">Menus</v-list-item>
           </v-list>
         </v-navigation-drawer>
         <v-main class="max-h-fit min-h-[100vh]">

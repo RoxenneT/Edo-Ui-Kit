@@ -11,15 +11,15 @@
         </v-expansion-panel-title>
         <v-expansion-panel-text class="bg-black">
           <code class="code">
-            <div class="mb-4">
+            <div class="mb-4 flex flex-col">
               <span class="text-[#91c7f4]">
                 &lt;EdoOtpInput 
               </span>
-              <span class="text-[#91c7f4] ml-1">
-                  color="<span class="text-[#7bf6b8]">success</span>"
-                  variant="<span class="text-[#7bf6b8]">outlined, plain</span>"
-                  v-model="<span class="text-[#7bf6b8]">otpValue</span>"
-              </span>
+              <div class="text-[#91c7f4] ml-4 flex flex-col">
+                  <span>color="<span class="text-[#7bf6b8]">success</span>"</span>
+                  <span>variant="<span class="text-[#7bf6b8]">outlined, plain</span>"</span>
+                  <span>v-model="<span class="text-[#7bf6b8]">otpValue</span>"</span>
+              </div>
               <span class="text-[#91c7f4]">
                 /&gt;
               </span>
@@ -28,7 +28,7 @@
               <span class="text-[#91c7f4]">
                 &lt;script <span class="text-[#e9e978]">setup</span>&gt;  
               </span>
-              <span class="text-[orange]">
+              <span class="text-[orange] ml-4">
                 const
                 <span class="text-[#7bf6b8]">
                   otpValue

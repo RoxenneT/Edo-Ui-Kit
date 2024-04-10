@@ -1,21 +1,6 @@
 <script setup>
+import {documents, languages} from '../../main-page';
 const dialog = ref(false);
-
-const documents = [
-  {
-    title: 'Документы',
-    points: [
-    'Реализация товаров и услуг',
-    'Возврат поставщику',
-    'Акт сверки',
-    ],
-  },
-];
-
-const languages = [
-  { title: 'Русский', value: 'ru' },
-  { title: 'Қазақша', value: 'kz' }
-];
 </script>
 
 <template>
