@@ -1,23 +1,42 @@
 <script setup>
-const userInput = ref('');
 const options = ref([
-  { value: 'Опция 1', text: 'Опция 1' },
-  { value: 'Опция 2', text: 'Опция 2' },
-  { value: 'Опция 3', text: 'Опция 3' },
-  { value: 'Опция 4', text: 'Опция 4' },
+  { value: 'PDF' }, 
 ]);
 
-const handleInput = () => {
-  console.log('Выбрано или введено:', userInput.value);
+const userInput = ref('');
+
+const loadSavedOptions = () => {
+  const savedOptions = JSON.parse(localStorage.getItem('userInputOptions'));
+  if (savedOptions && Array.isArray(savedOptions)) {
+    options.value = [...savedOptions.map(option => ({ value: option }))];
+  }
+};
+
+onMounted(() => {
+  loadSavedOptions();
+});
+
+const handleBlur = () => {
+  const value = userInput.value.trim();
+  if (!value) return; 
+  const isValueExist = options.value.some(option => option.value === value);
+  if (!isValueExist) {
+    options.value.push({ value: value });
+    if (options.value.length > 10) {
+      options.value.shift();
+    }
+    localStorage.setItem('userInputOptions', JSON.stringify(options.value.map(option => option.value)));
+  }
 };
 </script>
 
+
 <template>
-  <div>
-    <input list="optionsList" id="userInputWithList" v-model="userInput" @input="handleInput" />
+  <div class="w-[100%] h-[100%]">
+    <input list="optionsList" id="userInputWithList" v-model="userInput" @blur="handleBlur" />
     <datalist id="optionsList">
       <option v-for="(option, index) in options" :key="index" :value="option.value">
-        {{ option.text }}
+        {{ option.value }}
       </option>
     </datalist>
   </div>
@@ -26,6 +45,6 @@ const handleInput = () => {
 <style lang="scss" scoped>
 input {
   @apply w-[100%] bg-[#fff] shadow-[0_4px_32px_rgba(0,0,0,.06),_0_1px_1px_rgba(0,0,0,.1)] 
-  rounded-xl py-4 px-6 mb-3.5 font-medium text-lg outline-none border-2 border-solid border-transparent;
+  rounded-xl py-4 px-6 font-medium text-lg outline-none border-2 border-solid border-transparent;
 }
 </style>

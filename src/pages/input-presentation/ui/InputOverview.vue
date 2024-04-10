@@ -30,10 +30,17 @@
         </h3>
         <InputOtpUsage />
         <h3>
+          EdoSwitch предоставляет пользователям возможность выбирать между двумя разными значениями. 
+        </h3>
+        <SwitchUsage />
+        <h3>
+          EdoInputOption предоставляет возможность набора текста или выбора опции из списка. 
+        </h3>
+        <InputOptionUsage />
+        <h3>
           EdoFileInput используется для загрузки файлов. 
         </h3>
         <InputFileUsage />
-        <EdoInputOption />
       </div>
     </v-col>
   </v-row>

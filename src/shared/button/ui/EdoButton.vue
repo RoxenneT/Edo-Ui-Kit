@@ -33,7 +33,7 @@ const onClick = () => {
         :color="color"
         :icon="icon"
         :disabled="disabled"
-        :variant="isHovering ? 'outlined' : none"
+        :variant="isHovering ? 'outlined' : 'flat'"
         :elevation="elevation"
         :size="size"
         :rounded="rounded"

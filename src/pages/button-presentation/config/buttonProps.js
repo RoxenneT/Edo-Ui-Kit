@@ -1,11 +1,11 @@
   export const buttonDefault = [{ name: 'Button' }];
   export const buttonElevation = [
-    {attributes: {elevation: '4', size: 'large'}, name: 'Elevation 4'},
-    {attributes: {elevation: '8', size: 'large'}, name: 'Elevation 8'},
-    {attributes: {elevation: '12', size: 'large'}, name: 'Elevation 12'},
-    {attributes: {elevation: '16', size: 'large'}, name: 'Elevation 16'},
-    {attributes: {elevation: '20', size: 'large'}, name: 'Elevation 20'},
-    {attributes: {elevation: '24', size: 'large'}, name: 'Elevation 24'},
+    {attributes: {elevation: 4, size: 'large'}, name: 'Elevation 4'},
+    {attributes: {elevation: 8, size: 'large'}, name: 'Elevation 8'},
+    {attributes: {elevation: 12, size: 'large'}, name: 'Elevation 12'},
+    {attributes: {elevation: 16, size: 'large'}, name: 'Elevation 16'},
+    {attributes: {elevation: 20, size: 'large'}, name: 'Elevation 20'},
+    {attributes: {elevation: 24, size: 'large'}, name: 'Elevation 24'},
   ];
   export const buttonSizes = [
     {attributes: {size: 'x-small'}, name: 'Extra small Button'},

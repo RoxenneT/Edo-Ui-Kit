@@ -1,14 +1,15 @@
 <script setup>
-  const activePoint = ref(null);
+const activePoint = ref(null);
 
-  const props = defineProps({
-    content: { type: Array, default: () => [] },
-  });
+const props = defineProps({
+  content: { type: Array, default: () => [] },
+});
 
-  function setActivePoint(pointKey) {
-    activePoint.value = pointKey;
-  };
+function setActivePoint(pointKey) {
+  activePoint.value = pointKey;
+};
 </script>
+
 <template>
   <div>
     <v-expansion-panels variant="accordion">
