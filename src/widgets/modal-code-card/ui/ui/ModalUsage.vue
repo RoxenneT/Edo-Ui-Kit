@@ -14,14 +14,14 @@ defineProps({
         </v-expansion-panel-title>
         <v-expansion-panel-text class="bg-black">
           <code class="code">
-            <div v-for="(item, index) in items" :key="index" class="mb-4">
+            <div v-for="(item, index) in items" :key="index" class="mb-4 flex flex-col">
               <span class="text-[#91c7f4]">
-                &lt;EdoButton
+                &lt;EdoModal
               </span>
               <span 
                 v-for="(value, name) in item.attributes" 
                 :key="name" 
-                class="text-[#91c7f4] ml-1"
+                class="text-[#91c7f4] ml-4"
               >
                <template v-if="value === true">
                   {{ name }}
@@ -33,9 +33,9 @@ defineProps({
               <span class="text-[#91c7f4] deleteSpace">
                 &gt;
               </span>
-              <span class="deleteSpaces">{{ item.name }}</span>
+              <span class="deleteSpaces ml-4">{{ item.content }}</span>
               <span class="text-[#91c7f4]">
-                &lt;/EdoButton&gt;
+                &lt;/EdoModal&gt;
               </span>
             </div>
           </code>
@@ -43,13 +43,18 @@ defineProps({
       </v-expansion-panel>
     </v-expansion-panels>
     <div class="presentation">
-      <EdoButton 
+      <EdoModal 
         v-for="(item, index) in items" 
         :key="index" 
         v-bind="item.attributes"
       >
-        {{ item.name }}
-      </EdoButton>
+        <div v-if="item.content === '<Invitation />'">
+          <Invitation />
+        </div>
+        <div v-else-if="item.content === '<DocumentRoute />'">
+          <DocumentRoute />
+        </div>
+      </EdoModal>
     </div>
   </div>
 </template>

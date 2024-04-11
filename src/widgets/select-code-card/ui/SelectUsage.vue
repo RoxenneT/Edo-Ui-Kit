@@ -8,7 +8,7 @@
     <v-expansion-panels variant="accordion" class="w-[100%]">
       <v-expansion-panel>
         <v-expansion-panel-title class="font-bold">
-          EdoInput
+          EdoSelect
         </v-expansion-panel-title>
         <v-expansion-panel-text class="bg-black">
           <code class="code">
@@ -55,7 +55,7 @@
           v-model="selectValue"
           :items="emails"
         />
-        <div class="text-lg flex flex-row gap-1">
+        <div class="text-lg flex flex-row gap-1 mt-4">
           <h2 class="font-bold text-[#138fc4]">selectValue:</h2> 
           {{ selectValue }}
         </div>
@@ -66,7 +66,7 @@
 
 <style lang="scss" scoped>
 .presentation { 
-  @apply w-[100%] h-[130px] bg-blue-100 flex justify-center items-center gap-5 flex-wrap mb-8;
+  @apply w-[100%] h-[150px] bg-blue-100 flex justify-center items-center gap-5 flex-wrap mb-8;
 }
 
 .deleteSpace {

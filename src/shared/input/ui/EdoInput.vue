@@ -33,6 +33,6 @@ const assignBinding = computed({
 <style lang="scss" scoped>
 input {
   @apply w-[100%] bg-[#fff] shadow-[0_4px_32px_rgba(0,0,0,.06),_0_1px_1px_rgba(0,0,0,.1)] 
-  rounded-xl py-4 px-6 mb-3.5 font-medium text-lg outline-none border-2 border-solid border-transparent;
+  rounded-xl py-4 px-6 font-medium text-lg outline-none border-2 border-solid border-transparent;
 }
 </style>

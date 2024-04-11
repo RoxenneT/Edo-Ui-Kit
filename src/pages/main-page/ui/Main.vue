@@ -45,16 +45,14 @@ const dialog = ref(false);
                 </EdoMenu>
                 <div class="w-20 pt-4 flex flex-col gap-4">
                   <span>Edo Modal</span>
-                  <EdoButton
+                  <EdoModal  
                     icon
                     color="success"
                     textColor="white"
                     rounded="lg"
                     buttonIcon="mdi-plus"
-                    @click="dialog = true"
-                  ></EdoButton>
-                  <EdoModal v-model="dialog">
-                    <h1>Учёт KZ</h1>
+                    >
+                    <h1 class="w-32 h-20 text-center">Учёт KZ</h1>
                   </EdoModal>
                 </div>
               </div>

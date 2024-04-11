@@ -58,7 +58,7 @@
           minLength=1
           maxLength=20
         />
-        <div class="text-lg flex flex-row gap-1">
+        <div class="text-lg flex flex-row gap-1 mt-4">
           <h2 class="font-bold text-[#138fc4]">inputValue:</h2> 
           {{ inputValue }}
         </div>
@@ -69,7 +69,7 @@
 
 <style lang="scss" scoped>
 .presentation { 
-  @apply w-[100%] h-[130px] bg-blue-100 flex justify-center items-center gap-5 flex-wrap mb-8;
+  @apply w-[100%] h-[150px] bg-blue-100 flex justify-center items-center gap-5 flex-wrap mb-8;
 }
 
 .deleteSpace {

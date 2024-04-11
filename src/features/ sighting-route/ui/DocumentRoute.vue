@@ -1,35 +1,14 @@
 <script setup>
-const documentTypes = [
-  'Реализация товаров услуг', 
-  'Возврат поставщику', 
-  'Акт сверки исходящий',
-  'Договоры исходящие', 
-  'Произвольные документы исходящие',
-  'Поступление товаров услуг', 
-  'Возврат от покупателя', 
-  'Акт сверки входящий',
-  'Договоры входящие', 
-  'Произвольные документы входящие'
-];
-
-const userEmails = [
-  'ermekov25@gmail.com', 
-  '500600@list.ru', 
-  'sfur.nn.52@mail.ru'
-];
-
-const  headers = [
-  { text: '№', value: 'index' },
-  { text: 'Сотрудник', value: 'email' },
-  { text: '', slot: 'action' }
-];
+import { documentTypes, userEmails, headers } from '..';
 
 const employees = ref([]); 
 const selectedUserEmail = ref('');
+const selectedDocumentType = ref('');
 const inputValue = ref('');
 
 watch(selectedUserEmail, (newValue) => {
-  if (newValue) {
+  const emailExists = employees.value.find(employee => employee.email === newValue);
+  if (!emailExists) {
     employees.value.push({ 
       index: employees.value.length + 1,
       email: newValue 
@@ -53,15 +32,18 @@ const deleteUserEmail = (indexToDelete) => {
     <v-card-text>
       <v-row>
         <v-col cols="12" md="6" class="text-center">
-          <div>
+          <div class="mb-4">
             <v-card-title>Название маршрута</v-card-title>
             <EdoInput v-model="inputValue" />
           </div>
-          <div>
+          <div class="mb-4">
             <v-card-title>Типы документа</v-card-title>
-            <EdoSelect :items="documentTypes" />
+            <EdoSelect 
+              :items="documentTypes" 
+              v-model="selectedDocumentType"
+            />
           </div>
-          <div>
+          <div class="mb-4">
             <v-card-title>Список пользователей компании</v-card-title>
             <EdoSelect 
               :items="userEmails" 
@@ -96,14 +78,14 @@ const deleteUserEmail = (indexToDelete) => {
 
 <style lang="scss" scoped>
 .tw-modal-holder {
-  @apply w-[900px] h-[471px];
+  @apply w-[868px] h-[472px];
 }
 
 .tw-model-title {
-  @apply h-[40px] border-b-2 border-solid border-slate-300 font-bold text-2xl p-0 pb-3.5 mb-3.5 text-center;
+  @apply h-[40px] border-b-2 border-solid border-slate-300 font-bold text-2xl p-0 mb-2 text-center;
 }
   
 .tw-switch-holder {
-  @apply flex justify-between items-center text-lg;
+  @apply flex justify-between items-center text-lg mt-3.5;
 }
 </style>

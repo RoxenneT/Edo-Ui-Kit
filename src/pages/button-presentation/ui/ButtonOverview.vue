@@ -7,6 +7,7 @@ import {
   buttonColor,
   buttonIcons,
   buttonIconsText,
+  buttonDensity,
   buttonVariant,
   buttonHover,
   variantInfo
@@ -79,7 +80,14 @@ import {
           :items="buttonIconsText"
         />
         <h3>
-          The variant prop дает вам легкий доступ к нескольким различным стилям кнопок. 
+          Density prop используется для управления вертикальным пространством, которое занимает кнопка.
+        </h3>
+        <ButtonUsage 
+          title="Density"
+          :items="buttonDensity"
+        />
+        <h3>
+          Variant prop дает вам легкий доступ к нескольким различным стилям кнопок. 
           Prop enableHover применяет на кнопку hover, который меняет ее на outlined.
         </h3>
         <div class="mb-8">

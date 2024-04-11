@@ -1,3 +1,10 @@
+<script setup>
+  const props = defineProps({
+    headers: { type: Array, required: true },
+    rows: { type: Array, required: true },
+  })
+</script>
+
 <template>
   <v-simple-table>
     <template v-slot:default>
@@ -24,13 +31,6 @@
   </v-simple-table>
 </template>
 
-<script setup>
-  const props = defineProps({
-    headers: { type: Array, required: true },
-    rows: { type: Array, required: true },
-  })
-</script>
-
 <style lang="scss" scoped>
 v-simple-table {
   @apply flex flex-col w-[100%] min-h-[83px] max-h-fit bg-[#fff] rounded-xl
@@ -41,7 +41,7 @@ thead {
 }
 
 th {
-  @apply px-11 pt-6 pb-2 text-[#7a7a7a] text-sm leading-5
+  @apply px-8 pt-6 pb-2 text-[#7a7a7a] text-sm leading-5
 }
 
 tbody {
@@ -53,6 +53,6 @@ tr{
 }
   
 td {
-  @apply px-11 text-base font-medium 
+  @apply px-8 text-base font-medium 
 }
 </style>

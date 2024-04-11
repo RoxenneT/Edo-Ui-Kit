@@ -38,6 +38,11 @@
   export const buttonIconsText = [
     {attributes: {buttonIcon: 'mdi-heart', rounded: 'lg', size: 'x-large'}, name: 'Button'}
   ];
+  export const buttonDensity = [
+    {attributes: {density: 'compact', size: 'large'}, name: 'Compact Button'},
+    {attributes: {density: 'comfortable', size: 'large'}, name: 'Comfortable Button'},
+    {attributes: {density: 'default', size: 'large'}, name: 'Default Button'},
+  ];
   export const buttonVariant = [
     {attributes: {variant: 'elevated', size: 'large'}, name: 'Elevated'},
     {attributes: {variant: 'flat', size: 'large'}, name: 'Flat'},

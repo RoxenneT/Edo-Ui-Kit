@@ -28,11 +28,15 @@ const assignBinding = computed({
 
 <style lang="scss" scoped>
 :deep(.v-field) {
-  @apply h-[100%] bg-[#fff] shadow-[0_4px_32px_rgba(0,0,0,.06),_0_1px_1px_rgba(0,0,0,.1)] rounded-xl mb-3.5 
+  @apply h-[100%] w-[100%] bg-[#fff] shadow-[0_4px_32px_rgba(0,0,0,.06),_0_1px_1px_rgba(0,0,0,.1)] rounded-xl mb-3.5 
+}
+
+.v-select {
+  @apply rounded-xl focus-within:border focus-within:border-slate-100 focus-within:border-solid
 }
 
 .v-input.v-input--horizontal.v-input--density-default.v-locale--is-ltr.v-text-field.v-input--plain-underlined.v-select.v-select--single.v-select--selected {
-  @apply w-[100%] py-3 px-6
+  @apply w-[100%]
 }
 
 :deep(.v-select__selection-text) {

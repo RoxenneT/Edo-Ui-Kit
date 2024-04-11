@@ -65,6 +65,6 @@
 
 <style lang="scss" scoped>
 .presentation { 
-  @apply w-[100%] h-[130px] bg-blue-100 flex justify-center items-center gap-5 flex-wrap mb-8;
+  @apply w-[100%] h-[150px] bg-blue-100 flex justify-center items-center gap-5 flex-wrap mb-8;
 }
 </style>
