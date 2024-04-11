@@ -30,7 +30,10 @@ const props = defineProps({
           :key="index"
           :value="item.value"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <v-list-item-title>
+            <v-icon v-if="item.icon" class="mr-2">{{ item.icon }}</v-icon>
+            {{ item.title }}
+          </v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>

@@ -1,6 +1,7 @@
 <script setup>
 import { menuProps, menu, menuWithIcon } from '../../menus-presentation';
 </script>
+
 <template>
 	<v-row class="px-44 py-8 bg-[#f8fbff]">
 		<v-col justify='center' class="text-justify">
@@ -42,6 +43,20 @@ import { menuProps, menu, menuWithIcon } from '../../menus-presentation';
         </div>
 				<MenuUsage title="EdoMenu" :items="menu" />
 				<MenuUsage title="EdoMenu with icon" :items="menuWithIcon" />
+        <h3 class="mb-2">
+					EdoToggleMenu принимает:
+				</h3>
+        <div class="mb-8">
+          <div class="flex bg-zinc-100 border-2 border-solid border-[#f8fbff]">
+            <div class="w-36 bg-blue-100 text-black text-lg pl-2">
+              :content
+            </div>
+            <div class="w-[100%] bg-gray-100 text-base px-2">
+              массив объектов с ключами title и points
+            </div>
+          </div>
+        </div>
+				<ToggleMenuUsage />
 			</div>
 		</v-col>
 	</v-row>

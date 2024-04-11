@@ -2,7 +2,6 @@
 const props = defineProps({
   items: [Array, Object],
   modelValue: [String, Number],
-  label: String,
   placeholder: String,
 });
 
@@ -22,14 +21,22 @@ const assignBinding = computed({
   <v-select
     :items="items"
     v-model="assignBinding"
-    :label="label"
     :placeholder="placeholder"
+    variant="plain"
   ></v-select>
 </template>
 
 <style lang="scss" scoped>
 :deep(.v-field) {
-  @apply h-auto w-[100%] shadow-[0_4px_32px_rgba(0,0,0,.06),_0_1px_1px_rgba(0,0,0,.1)] rounded-xl mb-3.5
+  @apply h-[100%] bg-[#fff] shadow-[0_4px_32px_rgba(0,0,0,.06),_0_1px_1px_rgba(0,0,0,.1)] rounded-xl mb-3.5 
+}
+
+.v-input.v-input--horizontal.v-input--density-default.v-locale--is-ltr.v-text-field.v-input--plain-underlined.v-select.v-select--single.v-select--selected {
+  @apply w-[100%] py-3 px-6
+}
+
+:deep(.v-select__selection-text) {
+  @apply pl-6
 }
 
 :deep(.v-field__input){
