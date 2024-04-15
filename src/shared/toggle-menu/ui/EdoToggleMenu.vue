@@ -56,10 +56,12 @@ function setActivePoint(pointKey) {
   }
 
   .points {
-    @apply text-xs leading-4 relative w-[100%] h-[100%] flex items-center hover:bg-[#ecf5ff] ;
+    @apply text-xs leading-4 relative w-[100%] h-[100%] flex items-center hover:bg-[#f7fbff] hover:after:content-[''] 
+    hover:after:w-[2px] after:h-[22px] hover:after:bg-[#89cb4e] after:block after:absolute after:top-[30%] after:left-0;
   }
 
   .is-active {
-    @apply bg-[#ecf5ff] after:content-[''] after:w-[2px] after:h-[22px] after:bg-[#89cb4e] after:block after:absolute after:top-[30%] after:left-0;
+    @apply bg-[#ecf5ff] after:content-[''] after:w-[2px] after:h-[22px] after:bg-[#89cb4e] 
+    after:block after:absolute after:top-[30%] after:left-0 #{!important};
   }
 </style>

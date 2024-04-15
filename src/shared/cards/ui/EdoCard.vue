@@ -26,7 +26,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .tw-edo-card-container {
-  @apply w-fit h-fit bg-[#fff] shadow-[-20px_20px_32px_rgba(0,0,0,.06),_0_1px_1px_rgba(0,0,0,.1)] rounded-3xl
+  @apply w-fit h-fit bg-[#fff] shadow-[-20px_20px_32px_rgba(0,0,0,.06),_0_1px_1px_rgba(0,0,0,.1)] rounded-2xl #{!important}
 }
 
 .tw-hover-effect {

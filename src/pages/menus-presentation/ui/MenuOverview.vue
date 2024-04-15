@@ -1,5 +1,5 @@
 <script setup>
-import { menuProps, menu, menuWithIcon } from '../../menus-presentation';
+import { menuProps, menu, menuWithIcon, menuListProps } from '../../menus-presentation';
 </script>
 
 <template>
@@ -56,10 +56,30 @@ import { menuProps, menu, menuWithIcon } from '../../menus-presentation';
             </div>
           </div>
         </div>
-				<ToggleMenuUsage />
-			</div>
-		</v-col>
-	</v-row>
+		    <ToggleMenuUsage />
+        <h3 class="mb-2">
+					EdoListMenu props:
+				</h3>
+        <div class="mb-2">
+          <div 
+            v-for="(item, index) in menuListProps" 
+            :key="index" 
+            class="flex bg-zinc-100 border-2 border-solid border-[#f8fbff]"
+          >
+            <div 
+              class="w-36 bg-blue-100 text-black text-lg pl-2">{{ item.title }}</div>
+            <div class="w-[100%] bg-gray-100 text-base px-2">{{ item.text }}</div>
+          </div>
+        </div>
+        <h3 class="mb-2">
+					В нужном вам элементе массива укажите ключ showModal со значением true для указания, 
+          что по нажатию на этот элемент будет открыто модальное окно. В остольных указыкайте showModal: 'false'.
+          Нажмите на "Служба поддержки", чтобы увидеть работу showModal и enableModal.
+				</h3>
+        <ListMenuUsage />
+	    </div>
+    </v-col>
+  </v-row>
 </template>
 
 <style lang="scss" scoped>

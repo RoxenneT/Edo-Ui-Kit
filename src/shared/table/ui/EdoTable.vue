@@ -41,18 +41,18 @@ thead {
 }
 
 th {
-  @apply px-8 pt-6 pb-2 text-[#7a7a7a] text-sm leading-5
+  @apply w-[100%] px-8 pt-6 pb-2 text-[#7a7a7a] text-sm leading-5
 }
 
 tbody {
-  @apply w-[100%] 
-}
-
-tr{
   @apply w-[100%]
 }
   
+tr {
+  @apply flex flex-nowrap justify-center items-center
+}
+
 td {
-  @apply px-8 text-base font-medium 
+  @apply w-[100%] inline-block text-base text-center font-medium 
 }
 </style>

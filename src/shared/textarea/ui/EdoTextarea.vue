@@ -1,0 +1,42 @@
+<script setup>
+  const props = defineProps({
+    label: {type: String, default: ''},
+    rows: {type: Number},
+    background: {type: String, default: ''},
+    modelValue: [String, Number, Array, Object],
+    max: Number,
+    min: Number,
+  });
+
+  const emit = defineEmits(['update:modelValue']);
+
+  const assignBinding = computed({
+    get() {
+      return props.modelValue;
+    },
+    set(value) {
+      emit('update:modelValue', value);
+    }
+  });
+</script>
+
+<template>
+  <v-textarea 
+    :label="label" 
+    variant="solo"
+    :rows="rows"
+    v-model="assignBinding"
+    :maxLength='max || undefined'
+    :minLength='min || undefined'
+    clear-icon="mdi-close-circle"
+    clearable
+    class="w-[100%]"
+  >
+  </v-textarea>
+</template>
+
+<style lang="scss" scoped>
+:deep(.v-input__details) {
+  @apply hidden #{!important};
+}
+</style>
