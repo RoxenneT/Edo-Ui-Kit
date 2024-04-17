@@ -1,1 +1,1 @@
-export * from '../select-code-card/config/selectItems';
+export * from '../select-code-card/config/selectItems'

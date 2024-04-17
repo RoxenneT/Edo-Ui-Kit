@@ -2,8 +2,12 @@
   <EdoCard class="pa-10">
     <div class="tw-edo-document-container">
       <div class="tw-static">
-        <div class="tw-title">Общие настройки</div>
-        <div class="tw-subtitle">Редактировать</div>
+        <div class="tw-title">
+          Общие настройки
+        </div>
+        <div class="tw-subtitle">
+          Редактировать
+        </div>
       </div>
       <div>
         <div class="tw-info">
@@ -13,9 +17,9 @@
           <div class="tw-status">
             Активен
           </div>
-          </div> 
         </div>
       </div>
+    </div>
   </EdoCard>
 </template>
 
@@ -35,7 +39,7 @@
 .tw-subtitle {
   @apply text-[#4d6dc8] hover:cursor-pointer hover:underline
 }
-  
+
 .tw-info {
   @apply flex
 }

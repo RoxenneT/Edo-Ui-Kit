@@ -1,23 +1,32 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed } from 'vue'
 
-const isActive = ref(false);
+const isActive = ref(false)
 
 const toggleSwitch = () => {
-  isActive.value = !isActive.value;
-};
+  isActive.value = !isActive.value
+}
 
 const thumbStyle = computed(() => {
   return {
     transform: isActive.value ? 'translateX(32px)' : 'translateX(0)',
-  };
-});
+  }
+})
 </script>
 
 <template>
-  <div class="tw-switch-wrapper" @click="toggleSwitch">
-    <div class="tw-switch-track" :class="{ 'active': isActive }">
-      <div class="tw-switch-thumb" :style="thumbStyle"></div>
+  <div
+    class="tw-switch-wrapper"
+    @click="toggleSwitch"
+  >
+    <div
+      class="tw-switch-track"
+      :class="{ active: isActive }"
+    >
+      <div
+        class="tw-switch-thumb"
+        :style="thumbStyle"
+      />
     </div>
   </div>
 </template>
@@ -31,10 +40,10 @@ const thumbStyle = computed(() => {
 
 }
 .tw-switch-track.active {
-  @apply bg-[#89cb4e] 
+  @apply bg-[#89cb4e]
 }
 .tw-switch-thumb {
   @apply w-[30px] h-[30px] bg-white rounded-full transition-[0.25s] delay-100
- 
+
 }
 </style>

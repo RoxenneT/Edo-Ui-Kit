@@ -1,1 +1,1 @@
-export * from '../ sighting-route/config/data';
+export * from '../ sighting-route/config/data'

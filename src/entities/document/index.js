@@ -1,1 +1,1 @@
-export * from '../document/config/documentInfo';
+export * from '../document/config/documentInfo'

@@ -1,5 +1,5 @@
-<script setup> 
-  const router = useRouter();
+<script setup>
+const router = useRouter()
 </script>
 
 <template>
@@ -18,20 +18,34 @@
                     style="width: 90px;"
                     src="/logo.png"
                   />
-                </div>   
+                </div>
                 <div>
-                    & UI-KIT 
+                  & UI-KIT
                 </div>
               </div>
             </v-list-item>
-            <v-list-item @click="router.push({ name: 'components-buttons' })">Buttons</v-list-item>
-            <v-list-item @click="router.push({ name: 'components-inputs' })">Inputs</v-list-item>
-            <v-list-item @click="router.push({ name: 'components-menus' })">Menus</v-list-item>
-            <v-list-item @click="router.push({ name: 'components-modal' })">Modal</v-list-item>
+            <v-list-item @click="router.push({ name: 'components-buttons' })">
+              Buttons
+            </v-list-item>
+            <v-list-item @click="router.push({ name: 'components-inputs' })">
+              Inputs
+            </v-list-item>
+            <v-list-item @click="router.push({ name: 'components-menus' })">
+              Menus
+            </v-list-item>
+            <v-list-item @click="router.push({ name: 'components-modal' })">
+              Modal
+            </v-list-item>
+            <v-list-item @click="router.push({ name: 'components-card' })">
+              Card
+            </v-list-item>
+            <v-list-item @click="router.push({ name: 'components-table' })">
+              Table
+            </v-list-item>
           </v-list>
         </v-navigation-drawer>
         <v-main class="max-h-fit min-h-[100vh]">
-          <slot></slot>
+          <slot />
         </v-main>
       </v-layout>
     </v-card>

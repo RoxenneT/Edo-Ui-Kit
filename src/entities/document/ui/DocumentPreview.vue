@@ -1,44 +1,52 @@
 <script setup>
-  const documentPreview = [
-    {
-      id: 1,
-      total: 31,
-      img: '/sell.svg',
-      icon: 'mdi-clock-outline',
-      documentName: 'Реализация товаров и услуг',
-    },
-  ];
+const documentPreview = [
+  {
+    id: 1,
+    total: 31,
+    img: '/sell.svg',
+    icon: 'mdi-clock-outline',
+    documentName: 'Реализация товаров и услуг',
+  },
+]
 </script>
 
 <template>
-  <EdoCard enableHover>
-    <div 
-        class="py-6 px-5 tw-document-preview-container"
-        v-for="item in documentPreview"
-        :key="item.id"
+  <EdoCard enable-hover>
+    <div
+      v-for="item in documentPreview"
+      :key="item.id"
+      class="py-6 px-5 tw-document-preview-container"
     >
-        <div class="tw-subtitle pb-2">
-          Всего {{ item.total }} документов 
-        </div>
-        <div class="tw-document-img mb-2">
-          <v-img
-            style="max-width: 79px; height: auto;"
-            aspect-ratio="16/9"
-            cover
-            :src="item.img"
-          ></v-img>
-        </div>
-        <div class="tw-title pb-4">
-          {{ item.documentName }}
-        </div>
-        <div class="tw-total-info">
-            <v-icon class="mr-2" color="primary">{{ item.icon }}</v-icon>
-          <div class="tw-total-text-info">
-            <div class="tw-total-text-subtitle">Ожидает подписи</div>
-            <div class="tw-total-text-title">{{ item.total }} документов</div>
+      <div class="tw-subtitle pb-2">
+        Всего {{ item.total }} документов
+      </div>
+      <div class="tw-document-img mb-2">
+        <v-img
+          style="max-width: 79px; height: auto;"
+          aspect-ratio="16/9"
+          cover
+          :src="item.img"
+        />
+      </div>
+      <div class="tw-title pb-4">
+        {{ item.documentName }}
+      </div>
+      <div class="tw-total-info">
+        <v-icon
+          class="mr-2"
+          color="primary"
+        >
+          {{ item.icon }}
+        </v-icon>
+        <div class="tw-total-text-info">
+          <div class="tw-total-text-subtitle">
+            Ожидает подписи
+          </div>
+          <div class="tw-total-text-title">
+            {{ item.total }} документов
           </div>
         </div>
-        
+      </div>
     </div>
   </EdoCard>
 </template>
@@ -63,7 +71,7 @@
 .tw-total-info {
   @apply flex items-center
 }
-    
+
 .tw-total-text-subtitle {
   @apply text-[#7a7a7a] leading-4 text-xs
 }

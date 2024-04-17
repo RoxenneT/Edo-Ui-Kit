@@ -1,38 +1,37 @@
 <script setup>
-  const props = defineProps({
-    label: {type: String, default: ''},
-    rows: {type: Number},
-    background: {type: String, default: ''},
-    modelValue: [String, Number, Array, Object],
-    max: Number,
-    min: Number,
-  });
+const props = defineProps({
+  label: { type: String, default: '' },
+  rows: { type: Number, default: 14 },
+  background: { type: String, default: '' },
+  modelValue: { type: Array, default: () => [] },
+  max: { type: Number, default: 100 },
+  min: { type: Number, default: 1 },
+})
 
-  const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue'])
 
-  const assignBinding = computed({
-    get() {
-      return props.modelValue;
-    },
-    set(value) {
-      emit('update:modelValue', value);
-    }
-  });
+const assignBinding = computed({
+  get() {
+    return props.modelValue
+  },
+  set(value) {
+    emit('update:modelValue', value)
+  },
+})
 </script>
 
 <template>
-  <v-textarea 
-    :label="label" 
+  <v-textarea
+    v-model="assignBinding"
+    :label="label"
     variant="solo"
     :rows="rows"
-    v-model="assignBinding"
-    :maxLength='max || undefined'
-    :minLength='min || undefined'
+    :max-length="max || undefined"
+    :min-length="min || undefined"
     clear-icon="mdi-close-circle"
     clearable
     class="w-[100%]"
-  >
-  </v-textarea>
+  />
 </template>
 
 <style lang="scss" scoped>

@@ -15,21 +15,21 @@ const EdoTheme = {
     'edo-gray-7a': '#7a7a7a',
     'edo-white': '#fff',
     'edo-black': '#121212',
-  }
+  },
 }
 
 export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
     locale: {
-      fallback: "ru", 
+      fallback: 'ru',
     },
     theme: {
       defaultTheme: 'EdoTheme',
       themes: {
         EdoTheme,
       },
-    },  
-    ssr: true, 
-  });
+    },
+    ssr: true,
+  })
   app.vueApp.use(vuetify)
 })

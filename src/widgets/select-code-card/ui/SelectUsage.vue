@@ -1,11 +1,15 @@
 <script setup>
-  const selectValue = ref('');
-  import { emails } from '../../select-code-card';
+import { emails } from '../../select-code-card'
+
+const selectValue = ref('')
 </script>
 
 <template>
   <div class="w-[100%] mb-8">
-    <v-expansion-panels variant="accordion" class="w-[100%]">
+    <v-expansion-panels
+      variant="accordion"
+      class="w-[100%]"
+    >
       <v-expansion-panel>
         <v-expansion-panel-title class="font-bold">
           EdoSelect
@@ -17,9 +21,9 @@
                 &lt;EdoSelect
               </span>
               <div class="text-[#91c7f4] ml-4 flex flex-col">
-                  <span>:items="<span class="text-[#7bf6b8]">emails</span>"</span>
-                  <span>placeholder="<span class="text-[#7bf6b8]">e-mail</span>"</span> 
-                  <span>v-model="<span class="text-[#7bf6b8]">selectValue</span>"</span>
+                <span>:items="<span class="text-[#7bf6b8]">emails</span>"</span>
+                <span>placeholder="<span class="text-[#7bf6b8]">e-mail</span>"</span>
+                <span>v-model="<span class="text-[#7bf6b8]">selectValue</span>"</span>
               </div>
               <span class="text-[#91c7f4]">
                 /&gt;
@@ -27,7 +31,7 @@
             </div>
             <div class="flex flex-col">
               <span class="text-[#91c7f4]">
-                &lt;script <span class="text-[#e9e978]">setup</span>&gt;  
+                &lt;script <span class="text-[#e9e978]">setup</span>&gt;
               </span>
               <span class="text-[orange] ml-4">
                 const
@@ -37,11 +41,11 @@
                 =
                 <span class="text-[#e9e978]">
                   ref(<span class="text-[#7bf6b8]">' '</span>)
-                <span class="text-zinc-100">;</span>
+                  <span class="text-zinc-100">;</span>
                 </span>
               </span>
               <span class="text-[#91c7f4]">
-                &lt;/script&gt;  
+                &lt;/script&gt;
               </span>
             </div>
           </code>
@@ -50,13 +54,15 @@
     </v-expansion-panels>
     <div class="presentation">
       <div class="w-96 h-20 flex flex-col items-center justify-center">
-        <EdoSelect  
-          placeholder="e-mail"
+        <EdoSelect
           v-model="selectValue"
+          placeholder="e-mail"
           :items="emails"
         />
         <div class="text-lg flex flex-row gap-1 mt-4">
-          <h2 class="font-bold text-[#138fc4]">selectValue:</h2> 
+          <h2 class="font-bold text-[#138fc4]">
+            selectValue:
+          </h2>
           {{ selectValue }}
         </div>
       </div>
@@ -65,7 +71,7 @@
 </template>
 
 <style lang="scss" scoped>
-.presentation { 
+.presentation {
   @apply w-[100%] h-[150px] bg-blue-100 flex justify-center items-center gap-5 flex-wrap mb-8;
 }
 

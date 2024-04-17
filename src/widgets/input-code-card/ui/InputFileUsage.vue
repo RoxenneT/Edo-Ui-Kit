@@ -1,10 +1,9 @@
-<script setup>
-  const otpValue = ref('');
-</script>
-
 <template>
   <div class="w-[100%] mb-8">
-    <v-expansion-panels variant="accordion" class="w-[100%]">
+    <v-expansion-panels
+      variant="accordion"
+      class="w-[100%]"
+    >
       <v-expansion-panel>
         <v-expansion-panel-title class="font-bold">
           EdoFileInput
@@ -21,15 +20,15 @@
       </v-expansion-panel>
     </v-expansion-panels>
     <div class="presentation">
-        <div class="py-4">
-          <EdoFileInput />  
-        </div> 
+      <div class="py-4">
+        <EdoFileInput />
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.presentation { 
+.presentation {
   @apply w-[100%] min-h-[130px] max-h-fit bg-blue-100 flex justify-center items-center gap-5 flex-wrap mb-8;
 }
 </style>

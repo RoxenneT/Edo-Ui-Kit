@@ -1,39 +1,37 @@
 <script setup>
-  const profileInfo = [
-    '980525350925',
-    'АО "ТРАНСТЕЛЕКОМ"',
-    '87028130028',
-    'ermekov25@gmail.com',
-    'Неактивно',
-  ];
-  const titleInfo = [
-    'БИН', 
-    'Наименование компании', 
-    'Номер телефона', 
-    'Email', 
-    'Отображения даты подписания документов'
-  ];
+import { profileInfo, titleInfo } from '../../profile'
 </script>
 
 <template>
   <EdoCard class="pa-10">
     <div class="tw-edo-document-container">
       <div class="tw-static">
-        <div class="tw-title">Общая информация</div>
-        <div class="tw-subtitle">Редактировать профиль</div>
+        <div class="tw-title">
+          Общая информация
+        </div>
+        <div class="tw-subtitle">
+          Редактировать профиль
+        </div>
       </div>
       <div>
         <div class="tw-render-info">
           <div class="tw-points">
-            <div v-for="title in titleInfo" :key="title">
+            <div
+              v-for="title in titleInfo"
+              :key="title"
+            >
               {{ title }}
             </div>
           </div>
           <div>
-            <div class="tw-info" v-for="item in profileInfo" :key="item.index">
+            <div
+              v-for="item in profileInfo"
+              :key="item.index"
+              class="tw-info"
+            >
               {{ item }}
             </div>
-          </div> 
+          </div>
         </div>
       </div>
     </div>
@@ -56,20 +54,20 @@
 .tw-subtitle {
   @apply text-[#4d6dc8] hover:cursor-pointer hover:underline
 }
-     
+
 .tw-render-info {
   @apply flex
 }
 
 .tw-points {
-  @apply w-[236px]
+  @apply w-[236px] text-left
 }
 
 .tw-points > div {
   @apply text-[#7a7a7a] mb-3.5 font-medium
 }
-  
+
 .tw-info {
-  @apply font-medium mb-3.5 
+  @apply font-medium mb-3.5
 }
 </style>

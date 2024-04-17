@@ -1,17 +1,34 @@
 <script setup>
-  const fileSelected = (file) => {
-    // Обработка выбранного файла
-  }
+const fileSelected = (file) => {
+  // Обработка выбранного файла
+}
 </script>
 
 <template>
-<div class="custom-file-upload">
-  <input type="file" id="file-upload" hidden/>
-  <label for="file-upload" class="flex flex-col justify-center items-center gap-10">
-    <img src="/upload.svg" alt="Upload" class="file-upload-icon">
-    <EdoButton color="#89cb4e" textColor="white" rounded="lg" size="large" enableHover>Загрузить файл</EdoButton>
-  </label>
-</div>
+  <div class="custom-file-upload">
+    <input
+      id="file-upload"
+      type="file"
+      hidden
+    >
+    <label
+      for="file-upload"
+      class="flex flex-col justify-center items-center gap-10"
+    >
+      <img
+        src="/upload.svg"
+        alt="Upload"
+        class="file-upload-icon"
+      >
+      <EdoButton
+        color="#89cb4e"
+        text-color="white"
+        rounded="lg"
+        size="large"
+        enable-hover
+      >Загрузить файл</EdoButton>
+    </label>
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -2,32 +2,32 @@
 const props = defineProps({
   color: { type: String, default: '#00a0e3' },
   disabled: { type: Boolean, default: false },
-  elevation: { type: Number },
+  elevation: { type: Number, default: undefined },
   icon: { type: Boolean, default: false },
   buttonIcon: { type: String, default: '' },
   rounded: { type: String, default: '0' },
-  size: { type: String },
+  size: { type: String, default: undefined },
   density: { type: String, default: 'default' },
   cursor: { type: String, default: 'pointer' },
   variant: { type: String, default: 'flat' },
-  textColor: { type: String, default: ''},
+  textColor: { type: String, default: '' },
   enableHover: { type: Boolean, default: false },
-});
+})
 
-const emit = defineEmits(['click']);
+const emit = defineEmits(['click'])
 
 const customButtonClass = computed(() => {
   return [props.textColor]
 })
 
 const onClick = () => {
-  emit('click');
-};
+  emit('click')
+}
 </script>
 
 <template>
   <v-hover v-if="enableHover">
-    <template v-slot:default="{ isHovering, props }">
+    <template #default="{ isHovering, props }">
       <v-btn
         :class="isHovering ? !customButtonClass : customButtonClass"
         :color="color"
@@ -39,18 +39,21 @@ const onClick = () => {
         :rounded="rounded"
         :density="density"
         :cursor="cursor"
-        @click="onClick"
         v-bind="props"
         class="tw-bold-text tw-tight-spacing"
+        @click="onClick"
       >
         <div class="edo-button-content">
-          <v-icon v-if="buttonIcon">{{ buttonIcon }}</v-icon>
+          <v-icon v-if="buttonIcon">
+            {{ buttonIcon }}
+          </v-icon>
           <slot />
         </div>
       </v-btn>
     </template>
   </v-hover>
-  <v-btn v-else
+  <v-btn
+    v-else
     :class="customButtonClass"
     :color="color"
     :icon="icon"
@@ -61,11 +64,13 @@ const onClick = () => {
     :rounded="rounded"
     :density="density"
     :cursor="cursor"
-    @click="onClick"
     class="tw-bold-text tw-tight-spacing"
+    @click="onClick"
   >
     <div class="edo-button-content">
-      <v-icon v-if="buttonIcon">{{ buttonIcon }}</v-icon>
+      <v-icon v-if="buttonIcon">
+        {{ buttonIcon }}
+      </v-icon>
       <slot />
     </div>
   </v-btn>

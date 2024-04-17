@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-  useSeoMeta({
-    title: 'Учёт & UI-KIT',
+useSeoMeta({
+  title: 'Учёт & UI-KIT',
 })
 </script>

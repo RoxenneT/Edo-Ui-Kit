@@ -1,10 +1,13 @@
 <script setup>
-  const inputValue = ref('');
+const inputValue = ref('')
 </script>
 
 <template>
   <div class="w-[100%] mb-8">
-    <v-expansion-panels variant="accordion" class="w-[100%]">
+    <v-expansion-panels
+      variant="accordion"
+      class="w-[100%]"
+    >
       <v-expansion-panel>
         <v-expansion-panel-title class="font-bold">
           EdoInput
@@ -16,11 +19,11 @@
                 &lt;EdoInput
               </span>
               <div class="text-[#91c7f4] ml-4 flex flex-col">
-                  <span>type="<span class="text-[#7bf6b8]">text</span>"</span>
-                  <span>placeholder="<span class="text-[#7bf6b8]">ЭДО input</span>"</span> 
-                  <span>v-model="<span class="text-[#7bf6b8]">inputValue</span>"</span>
-                  <span>minLength="<span class="text-[#7bf6b8]">1</span>"</span>
-                  <span>maxLength="<span class="text-[#7bf6b8]">20</span>"</span>
+                <span>type="<span class="text-[#7bf6b8]">text</span>"</span>
+                <span>placeholder="<span class="text-[#7bf6b8]">ЭДО input</span>"</span>
+                <span>v-model="<span class="text-[#7bf6b8]">inputValue</span>"</span>
+                <span>minLength="<span class="text-[#7bf6b8]">1</span>"</span>
+                <span>maxLength="<span class="text-[#7bf6b8]">20</span>"</span>
               </div>
               <span class="text-[#91c7f4]">
                 /&gt;
@@ -28,7 +31,7 @@
             </div>
             <div class="flex flex-col">
               <span class="text-[#91c7f4]">
-                &lt;script <span class="text-[#e9e978]">setup</span>&gt;  
+                &lt;script <span class="text-[#e9e978]">setup</span>&gt;
               </span>
               <span class="text-[orange] ml-4">
                 const
@@ -38,11 +41,11 @@
                 =
                 <span class="text-[#e9e978]">
                   ref(<span class="text-[#7bf6b8]">' '</span>)
-                <span class="text-zinc-100">;</span>
+                  <span class="text-zinc-100">;</span>
                 </span>
               </span>
               <span class="text-[#91c7f4]">
-                &lt;/script&gt;  
+                &lt;/script&gt;
               </span>
             </div>
           </code>
@@ -51,15 +54,17 @@
     </v-expansion-panels>
     <div class="presentation">
       <div class="w-96 h-20 flex flex-col items-center justify-center">
-        <EdoInput  
+        <EdoInput
+          v-model="inputValue"
           type="text"
           placeholder="ЭДО input"
-          v-model="inputValue"
-          minLength=1
-          maxLength=20
+          min-length="1"
+          max-length="20"
         />
         <div class="text-lg flex flex-row gap-1 mt-4">
-          <h2 class="font-bold text-[#138fc4]">inputValue:</h2> 
+          <h2 class="font-bold text-[#138fc4]">
+            inputValue:
+          </h2>
           {{ inputValue }}
         </div>
       </div>
@@ -68,7 +73,7 @@
 </template>
 
 <style lang="scss" scoped>
-.presentation { 
+.presentation {
   @apply w-[100%] h-[150px] bg-blue-100 flex justify-center items-center gap-5 flex-wrap mb-8;
 }
 

@@ -1,4 +1,5 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+
 export default defineNuxtConfig({
   components: [
     {
@@ -12,14 +13,13 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxt/eslint',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
-        // @ts-expect-error
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
-    '@nuxtjs/tailwindcss',
-    //...
   ],
   vite: {
     vue: {
@@ -27,5 +27,8 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
+  },
+  eslint: {
+    config: { stylistic: true },
   },
 })

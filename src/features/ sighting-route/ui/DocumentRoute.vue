@@ -1,27 +1,27 @@
 <script setup>
-import { documentTypes, userEmails, headers } from '..';
+import { documentTypes, userEmails, headers } from '..'
 
-const employees = ref([]); 
-const selectedUserEmail = ref('');
-const selectedDocumentType = ref('');
-const inputValue = ref('');
+const employees = ref([])
+const selectedUserEmail = ref('')
+const selectedDocumentType = ref('')
+const inputValue = ref('')
 
 watch(selectedUserEmail, (newValue) => {
-  const emailExists = employees.value.find(employee => employee.email === newValue);
+  const emailExists = employees.value.find(employee => employee.email === newValue)
   if (!emailExists) {
-    employees.value.push({ 
+    employees.value.push({
       index: employees.value.length + 1,
-      email: newValue 
-    });
+      email: newValue,
+    })
   }
-});
+})
 
 const deleteUserEmail = (indexToDelete) => {
-  employees.value.splice(indexToDelete, 1);
+  employees.value.splice(indexToDelete, 1)
   employees.value.forEach((employee, index) => {
-    employee.index = index + 1;
-  });
-};
+    employee.index = index + 1
+  })
+}
 </script>
 
 <template>
@@ -31,23 +31,27 @@ const deleteUserEmail = (indexToDelete) => {
     </v-card-title>
     <v-card-text>
       <v-row>
-        <v-col cols="12" md="6" class="text-center">
+        <v-col
+          cols="12"
+          md="6"
+          class="text-center"
+        >
           <div class="mb-4">
             <v-card-title>Название маршрута</v-card-title>
             <EdoInput v-model="inputValue" />
           </div>
           <div class="mb-4">
             <v-card-title>Типы документа</v-card-title>
-            <EdoSelect 
-              :items="documentTypes" 
+            <EdoSelect
               v-model="selectedDocumentType"
+              :items="documentTypes"
             />
           </div>
           <div class="mb-4">
             <v-card-title>Список пользователей компании</v-card-title>
-            <EdoSelect 
-              :items="userEmails" 
-              v-model="selectedUserEmail" 
+            <EdoSelect
+              v-model="selectedUserEmail"
+              :items="userEmails"
             />
           </div>
           <div class="tw-switch-holder">
@@ -55,25 +59,35 @@ const deleteUserEmail = (indexToDelete) => {
             <EdoSwitch />
           </div>
         </v-col>
-        <v-col cols="12" md="6">
-          <v-card-title class="text-center">Список сотрудников</v-card-title>
-          <EdoTable :headers="headers" :rows="employees">
+        <v-col
+          cols="12"
+          md="6"
+        >
+          <v-card-title class="text-center">
+            Список сотрудников
+          </v-card-title>
+          <EdoTable
+            :headers="headers"
+            :rows="employees"
+          >
             <template #action="{ index }">
-              <EdoButton 
-                icon 
-                color="white" 
-                buttonIcon="mdi-close" 
-                text-color="black" 
-                variant="text" 
-                size="small" 
-                @click="deleteUserEmail(index)"
-              />
+              <div class="text-end">
+                <EdoButton
+                  icon
+                  color="white"
+                  button-icon="mdi-close"
+                  text-color="black"
+                  variant="text"
+                  size="small"
+                  @click="deleteUserEmail(index)"
+                />
+              </div>
             </template>
           </EdoTable>
         </v-col>
       </v-row>
     </v-card-text>
-  </div>   
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -84,7 +98,7 @@ const deleteUserEmail = (indexToDelete) => {
 .tw-model-title {
   @apply h-[40px] border-b-2 border-solid border-slate-300 font-bold text-2xl p-0 mb-2 text-center;
 }
-  
+
 .tw-switch-holder {
   @apply flex justify-between items-center text-lg mt-3.5;
 }

@@ -1,1 +1,1 @@
-export * from './config/buttonProps.js';
+export * from './config/buttonProps.js'

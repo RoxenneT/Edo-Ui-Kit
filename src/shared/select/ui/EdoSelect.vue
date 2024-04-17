@@ -1,34 +1,34 @@
 <script setup>
 const props = defineProps({
-  items: [Array, Object],
-  modelValue: [String, Number],
-  placeholder: String,
-});
+  items: { type: Array, default: () => [] },
+  modelValue: { type: Array, default: () => [] },
+  placeholder: { type: String, default: '' },
+})
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue'])
 
 const assignBinding = computed({
   get() {
-    return props.modelValue;
+    return props.modelValue
   },
   set(value) {
-    emit('update:modelValue', value);
-  }
-});
+    emit('update:modelValue', value)
+  },
+})
 </script>
 
 <template>
   <v-select
-    :items="items"
     v-model="assignBinding"
+    :items="items"
     :placeholder="placeholder"
     variant="plain"
-  ></v-select>
+  />
 </template>
 
 <style lang="scss" scoped>
 :deep(.v-field) {
-  @apply h-[100%] w-[100%] bg-[#fff] shadow-[0_4px_32px_rgba(0,0,0,.06),_0_1px_1px_rgba(0,0,0,.1)] rounded-xl mb-3.5 
+  @apply h-[100%] w-[100%] bg-[#fff] shadow-[0_4px_32px_rgba(0,0,0,.06),_0_1px_1px_rgba(0,0,0,.1)] rounded-xl mb-3.5
 }
 
 .v-select {
@@ -47,11 +47,10 @@ const assignBinding = computed({
   @apply leading-6 font-bold text-[#121212] bg-transparent
 }
 
-:deep(.v-field__append-inner), 
-:deep(.v-progress-linear), 
+:deep(.v-field__append-inner),
+:deep(.v-progress-linear),
 :deep(.v-input__details),
 :deep(.v-field__outline) {
-  @apply hidden w-0 h-0 
+  @apply hidden w-0 h-0
 }
 </style>
-

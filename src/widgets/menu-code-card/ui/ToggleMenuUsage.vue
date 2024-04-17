@@ -1,10 +1,13 @@
 <script setup>
-  import { documents } from '../../menu-code-card';
+import { documents } from '../../menu-code-card'
 </script>
 
 <template>
   <div class="w-[100%] mb-8">
-    <v-expansion-panels variant="accordion" class="w-[100%]">
+    <v-expansion-panels
+      variant="accordion"
+      class="w-[100%]"
+    >
       <v-expansion-panel>
         <v-expansion-panel-title class="font-bold">
           EdoToggleMenu
@@ -13,8 +16,8 @@
           <code class="code">
             <div class="mt-2">
               <span class="text-[#91c7f4]">
-                &lt;EdoToggleMenu 
-                <span>content="<span class="text-[#7bf6b8]">documents</span>"</span> 
+                &lt;EdoToggleMenu
+                <span>content="<span class="text-[#7bf6b8]">documents</span>"</span>
                 <span>/&gt;</span>
               </span>
             </div>
@@ -23,15 +26,15 @@
       </v-expansion-panel>
     </v-expansion-panels>
     <div class="presentation">
-        <div class="py-4">
-          <EdoToggleMenu :content="documents"/>  
-        </div> 
+      <div class="py-4">
+        <EdoToggleMenu :content="documents" />
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.presentation { 
+.presentation {
   @apply w-[100%] min-h-[130px] max-h-fit bg-blue-100 flex justify-center items-center gap-5 flex-wrap mb-8;
 }
 </style>

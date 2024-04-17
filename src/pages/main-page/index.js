@@ -1,1 +1,1 @@
-export * from '../main-page/config/elementsData';
+export * from '../main-page/config/elementsData'

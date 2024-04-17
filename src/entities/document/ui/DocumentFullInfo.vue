@@ -1,17 +1,19 @@
 <script setup>
-  import { documentInfo, documentPreview } from '../../document';
+import { documentInfo, documentPreview } from '../../document'
 </script>
 
 <template>
   <EdoCard class="pt-10 pb-5 px-10">
     <div class="tw-edo-document-container">
       <div
-        class="tw-document-preview-container"
         v-for="item in documentPreview"
         :key="item.id"
+        class="tw-document-preview-container"
       >
         <div class="tw-go-back mb-4">
-          <v-icon class="pr-2">mdi-arrow-u-left-top</v-icon>
+          <v-icon class="pr-2">
+            mdi-arrow-u-left-top
+          </v-icon>
           <p>К списку документов</p>
         </div>
         <div>
@@ -21,7 +23,7 @@
               aspect-ratio="16/9"
               cover
               :src="item.img"
-            ></v-img>
+            />
           </div>
           <div class="tw-name-title pb-4">
             {{ item.documentName }}
@@ -29,16 +31,27 @@
         </div>
       </div>
       <div class="tw-document-info">
-        <div class="tw-card-content"
+        <div
           v-for="item in documentInfo"
           :key="item.subtitle"
+          class="tw-card-content"
         >
-          <div class="tw-subtitle">{{ item.subtitle }}</div>
-          <div class="tw-title">{{ item.title }}</div>
-          <div v-if="item.subtitle2" class="tw-subtitle2">
-            {{ item.subtitle2 }} 
+          <div class="tw-subtitle">
+            {{ item.subtitle }}
+          </div>
+          <div class="tw-title">
+            {{ item.title }}
+          </div>
+          <div class="tw-title-number">
+            {{ item.number }}
+          </div>
+          <div
+            v-if="item.subtitle2"
+            class="tw-subtitle2"
+          >
+            {{ item.subtitle2 }}
             <span>{{ item.explanation }}</span>
-        </div>
+          </div>
         </div>
       </div>
     </div>
@@ -51,27 +64,27 @@
 }
 
 .tw-document-preview-container {
-  @apply w-[148px] h-[188px]
+  @apply w-[148px] h-[188px] mr-2
 }
 
 .tw-go-back {
-  @apply w-[100%] flex items-center cursor-pointer
+  @apply w-[100%] flex items-center cursor-pointer text-left
 }
 
 p {
   @apply w-[69px] text-[#5ca51a] text-xs
 }
-  
+
 .tw-name-title {
   @apply font-bold leading-6 text-base
 }
 
 .tw-document-info {
-  @apply w-[650px] h-[188px] flex flex-row justify-start items-start flex-wrap gap-y-10
+  @apply w-[650px] h-[188px] flex flex-row justify-start items-start flex-wrap gap-y-10 gap-x-10
 }
 
 .tw-card-content {
-  @apply w-[300px] max-h-[110px] min-h-[62px]
+  @apply  max-h-[110px] min-h-[62px]
 }
 
 .tw-subtitle {
@@ -79,6 +92,10 @@ p {
 }
 
 .tw-title {
+  @apply font-bold leading-6 mb-1 w-[237px]
+}
+
+.tw-title-number {
   @apply font-bold leading-6 mb-1
 }
 

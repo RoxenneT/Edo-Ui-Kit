@@ -7,9 +7,9 @@ export const documents = [
       'Акт сверки',
     ],
   },
-];
-  
+]
+
 export const languages = [
   { title: 'Русский', value: 'ru' },
-  { title: 'Қазақша', value: 'kz' }
-];
+  { title: 'Қазақша', value: 'kz' },
+]

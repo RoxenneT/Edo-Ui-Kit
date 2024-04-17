@@ -1,25 +1,25 @@
 export const modalInvitation = [
   {
-    attributes: { 
-      color: 'success', 
-      textColor: 'white', 
-      rounded: 'lg', 
-      buttonText: 'Пригласить пользователя', 
-      size: 'large'
+    attributes: {
+      color: 'success',
+      textColor: 'white',
+      rounded: 'lg',
+      buttonText: 'Пригласить пользователя',
+      size: 'large',
     },
-    content: '<Invitation />'
+    content: '<UserInvitation />',
   },
 ]
 
 export const modalDocumentRoute = [
   {
-    attributes: { 
+    attributes: {
       icon: 'true',
-      color: 'success', 
-      textColor: 'white', 
-      rounded: 'lg', 
+      color: 'success',
+      textColor: 'white',
+      rounded: 'lg',
       buttonIcon: 'mdi-plus',
     },
-    content: '<DocumentRoute />'
+    content: '<DocumentRoute />',
   },
 ]

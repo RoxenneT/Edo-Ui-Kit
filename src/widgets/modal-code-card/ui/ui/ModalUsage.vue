@@ -1,29 +1,36 @@
 <script setup>
 defineProps({
-  title: String,
-  items: Array,
+  title: { type: String, default: '' },
+  items: { type: Array, default: () => [] },
 })
 </script>
 
 <template>
   <div class="w-[100%] mb-8">
-    <v-expansion-panels variant="accordion" class="w-[100%]">
+    <v-expansion-panels
+      variant="accordion"
+      class="w-[100%]"
+    >
       <v-expansion-panel>
         <v-expansion-panel-title class="font-bold">
           {{ title }}
         </v-expansion-panel-title>
         <v-expansion-panel-text class="bg-black">
           <code class="code">
-            <div v-for="(item, index) in items" :key="index" class="mb-4 flex flex-col">
+            <div
+              v-for="(item, index) in items"
+              :key="index"
+              class="mb-4 flex flex-col"
+            >
               <span class="text-[#91c7f4]">
                 &lt;EdoModal
               </span>
-              <span 
-                v-for="(value, name) in item.attributes" 
-                :key="name" 
+              <span
+                v-for="(value, name) in item.attributes"
+                :key="name"
                 class="text-[#91c7f4] ml-4"
               >
-               <template v-if="value === true">
+                <template v-if="value === true">
                   {{ name }}
                 </template>
                 <template v-else>
@@ -43,13 +50,13 @@ defineProps({
       </v-expansion-panel>
     </v-expansion-panels>
     <div class="presentation">
-      <EdoModal 
-        v-for="(item, index) in items" 
-        :key="index" 
+      <EdoModal
+        v-for="(item, index) in items"
+        :key="index"
         v-bind="item.attributes"
       >
-        <div v-if="item.content === '<Invitation />'">
-          <Invitation />
+        <div v-if="item.content === '<UserInvitation />'">
+          <UserInvitation />
         </div>
         <div v-else-if="item.content === '<DocumentRoute />'">
           <DocumentRoute />
@@ -60,7 +67,7 @@ defineProps({
 </template>
 
 <style lang="scss" scoped>
-.presentation { 
+.presentation {
   @apply w-[100%] min-h-[130px] max-h-fit bg-blue-100 flex justify-center items-center gap-5 flex-wrap;
 }
 

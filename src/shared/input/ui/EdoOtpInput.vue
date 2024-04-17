@@ -1,20 +1,20 @@
 <script setup>
-  const props = defineProps({
-    color: { type: String, default: '#00a0e3' }, 
-    variant: { type: String, default: 'plain' }, 
-    modelValue: [String, Number, Array, Object],
-  });
+const props = defineProps({
+  color: { type: String, default: '#00a0e3' },
+  variant: { type: String, default: 'plain' },
+  modelValue: { type: String, default: '' },
+})
 
-  const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue'])
 
-  const assignBinding = computed({
+const assignBinding = computed({
   get() {
-    return props.modelValue;
+    return props.modelValue
   },
   set(value) {
-    emit('update:modelValue', value);
-  }
-});
+    emit('update:modelValue', value)
+  },
+})
 </script>
 
 <template>
@@ -22,5 +22,5 @@
     v-model="assignBinding"
     :color="color"
     :variant="variant"
-  ></v-otp-input>
+  />
 </template>

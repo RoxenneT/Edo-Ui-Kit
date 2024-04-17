@@ -1,6 +1,9 @@
 <template>
   <div class="w-[100%] mb-8">
-    <v-expansion-panels variant="accordion" class="w-[100%]">
+    <v-expansion-panels
+      variant="accordion"
+      class="w-[100%]"
+    >
       <v-expansion-panel>
         <v-expansion-panel-title class="font-bold">
           EdoSwitch
@@ -17,15 +20,15 @@
       </v-expansion-panel>
     </v-expansion-panels>
     <div class="presentation">
-        <div>
-          <EdoSwitch />  
-        </div> 
+      <div>
+        <EdoSwitch />
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.presentation { 
+.presentation {
   @apply w-[100%] min-h-[130px] max-h-fit bg-blue-100 flex justify-center items-center flex-wrap mb-8;
 }
 </style>
