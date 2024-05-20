@@ -4,7 +4,7 @@ const showModal = ref(false)
 const dialog = ref(false)
 
 const props = defineProps({
-  items: { type: String, default: '' },
+  items: { type: Array, default: () => [] },
   enableModal: { type: Boolean, default: false },
 })
 

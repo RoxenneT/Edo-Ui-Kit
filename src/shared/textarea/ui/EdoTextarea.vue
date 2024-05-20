@@ -3,7 +3,7 @@ const props = defineProps({
   label: { type: String, default: '' },
   rows: { type: Number, default: 14 },
   background: { type: String, default: '' },
-  modelValue: { type: Array, default: () => [] },
+  modelValue: { type: String, default: '' },
   max: { type: Number, default: 100 },
   min: { type: Number, default: 1 },
 })

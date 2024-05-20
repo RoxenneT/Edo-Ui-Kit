@@ -60,6 +60,7 @@ import { inputProps } from '../../input-presentation'
           EdoFileInput используется для загрузки файлов.
         </h3>
         <InputFileUsage />
+        <!-- <EdoDateRangePicker /> -->
       </div>
     </v-col>
   </v-row>
